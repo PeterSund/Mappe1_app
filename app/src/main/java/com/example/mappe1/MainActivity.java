@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnStartGame:
-                Intent intent1 = new Intent(this, MainActivity.class);
+                Intent intent1 = new Intent(this, GameActivity.class);
                 startActivity(intent1);
                 break;
 
