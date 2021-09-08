@@ -1,3 +1,16 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="Typos">
     <string name="app_name">Mappe1</string>
+    <string name="game_neste">Neste</string>
+    <string name="game_forrige">Forrige</string>
+    <string name="game_1">1</string>
+    <string name="game_2">2</string>
+    <string name="game_3">3</string>
+    <string name="game_4">4</string>
+    <string name="game_5">5</string>
+    <string name="game_6">6</string>
+    <string name="game_7">7</string>
+    <string name="game_8">8</string>
+    <string name="game_9">9</string>
+    <string name="game_0">0</string>
 </resources>
