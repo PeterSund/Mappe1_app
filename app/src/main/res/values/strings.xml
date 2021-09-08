@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mappe1</string>
+    <string name="menyStart">Start spill</string>
+    <string name="menyStats">Statistikk</string>
+    <string name="menyPref">Preferanser</string>
+
 </resources>
