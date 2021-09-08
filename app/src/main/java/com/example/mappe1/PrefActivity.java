@@ -14,7 +14,5 @@ public class PrefActivity extends AppCompatActivity {
         Intent intent = getIntent();
         intent.getData();
         setContentView(R.layout.activity_preferences);
-
-
     }
 }

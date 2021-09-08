@@ -13,4 +13,7 @@
     <string name="game_8">8</string>
     <string name="game_9">9</string>
     <string name="game_0">0</string>
+    <string name="menyStats">Statistikk</string>
+    <string name="menyStart">Spill</string>
+    <string name="menyPref">Preferanser</string>
 </resources>
