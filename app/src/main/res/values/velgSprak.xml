@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="språk">
+    <item>Velg språk</item>
+    <item>Norsk</item>
+    <item>Tysk</item>
+    </string-array>
+</resources>

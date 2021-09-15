@@ -1,5 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="Typos">
+    //Menu
     <string name="app_name">Mappe1</string>
     <string name="game_neste">Neste</string>
     <string name="game_forrige">Forrige</string>
@@ -18,4 +19,17 @@
     <string name="menyStats">Statistikk</string>
     <string name="menyStart">Spill</string>
     <string name="menyPref">Preferanser</string>
+
+    //Preferences
+    <string name="velg5spm">5 spørsmål</string>
+    <string name="velg10spm">10 spørsmål</string>
+    <string name="velg15spm">15 spørsmål</string>
+    <string name="velgAntallSpmTekst">Velg antall spørsmål</string>
+    <string name="velgSpråkTekst">Velg språk</string>
+
+    //Dialog language
+    <string name="dialogtekst">Er du sikker på at du vil endre språk til tysk?</string>
+    <string name="ja">Ja</string>
+    <string name="nei">Avbryt</string>
+
 </resources>

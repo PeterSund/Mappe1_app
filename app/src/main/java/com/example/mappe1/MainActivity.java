@@ -1,10 +1,16 @@
 package com.example.mappe1;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,9 +27,8 @@ public class MainActivity extends AppCompatActivity {
         btnPref.setOnClickListener(this::onClick);
     }
 
-
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnStartGame:
                 Intent intent1 = new Intent(this, GameActivity.class);
                 startActivity(intent1);
@@ -42,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
+
+    public static void changeLanguage(String landskode, Resources res) {
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration cf = res.getConfiguration();
+        cf.setLocale(new Locale(landskode));
+        res.updateConfiguration(cf, dm);
+    }
 }
+
+
 
 
