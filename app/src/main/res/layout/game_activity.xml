@@ -9,6 +9,7 @@
     >
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="265dp"
         android:layout_height="333dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,19 +23,19 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/button_1"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_1" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/button_2"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_2" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/button_3"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_3" />
@@ -46,19 +47,19 @@
             android:layout_height="75dp">
 
             <Button
-                android:id="@+id/button23"
+                android:id="@+id/button_4"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_4" />
 
             <Button
-                android:id="@+id/button22"
+                android:id="@+id/button_5"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_5" />
 
             <Button
-                android:id="@+id/button21"
+                android:id="@+id/button_6"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_6" />
@@ -70,19 +71,19 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button27"
+                android:id="@+id/button_7"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_7" />
 
             <Button
-                android:id="@+id/button26"
+                android:id="@+id/button_8"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_8" />
 
             <Button
-                android:id="@+id/button25"
+                android:id="@+id/button_9"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_9" />
@@ -94,19 +95,19 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button31"
+                android:id="@+id/button_forrige"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:text="@string/game_forrige" />
 
             <Button
-                android:id="@+id/button30"
+                android:id="@+id/button_0"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:text="@string/game_0" />
 
             <Button
-                android:id="@+id/button29"
+                android:id="@+id/button_neste"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:text="@string/game_neste" />
@@ -115,30 +116,40 @@
     </TableLayout>
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="253dp"
-        android:layout_height="93dp"
-        android:layout_marginTop="24dp"
-        android:text="Whats 9 + 10?"
+        android:id="@+id/spmView"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
         android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24000001" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="148dp" />
+        android:id="@+id/svar"
+        android:layout_width="53dp"
+        android:layout_height="24dp"
+        android:text="@string/svar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spmView"
+        app:layout_constraintVertical_bias="0.52" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="132dp" />
+    <TextView
+        android:id="@+id/answerView"
+        android:layout_width="163dp"
+        android:layout_height="29dp"
+        android:text="@string/game_answer"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toEndOf="@+id/svar"
+        app:layout_constraintTop_toBottomOf="@+id/spmView" />
+
 </android.support.constraint.ConstraintLayout>

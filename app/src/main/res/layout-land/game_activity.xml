@@ -23,19 +23,19 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/button_1"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_1" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/button_2"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_2" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/button_3"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_3" />
@@ -47,19 +47,19 @@
             android:layout_height="75dp">
 
             <Button
-                android:id="@+id/button23"
+                android:id="@+id/button_4"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_4" />
 
             <Button
-                android:id="@+id/button22"
+                android:id="@+id/button_5"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_5" />
 
             <Button
-                android:id="@+id/button21"
+                android:id="@+id/button_6"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_6" />
@@ -71,19 +71,19 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button27"
+                android:id="@+id/button_7"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_7" />
 
             <Button
-                android:id="@+id/button26"
+                android:id="@+id/button_8"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_8" />
 
             <Button
-                android:id="@+id/button25"
+                android:id="@+id/button_9"
                 android:layout_width="88dp"
                 android:layout_height="88dp"
                 android:text="@string/game_9" />
@@ -95,19 +95,19 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button31"
+                android:id="@+id/button_forrige"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:text="@string/game_forrige" />
 
             <Button
-                android:id="@+id/button30"
+                android:id="@+id/button_0"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:text="@string/game_0" />
 
             <Button
-                android:id="@+id/button29"
+                android:id="@+id/button_neste"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:text="@string/game_neste" />
