@@ -6,19 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".PrefActivity">
 
-<<<<<<< Updated upstream
+
     <TextView
         android:id="@+id/spmView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="353dp"
+        android:layout_marginBottom="712dp"
         android:text="TextView"
-=======
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    =======
+
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="281dp"
         android:layout_height="145dp"
         android:layout_marginTop="23dp"
->>>>>>> Stashed changes
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,9 +36,9 @@
             android:layout_height="wrap_content"
             android:minWidth="48dp"
             android:minHeight="48dp"
+            android:onClick="onClickedAntallSpm"
             android:text="@string/velg5spm"
             android:textSize="16sp"
-            android:onClick="onClickedAntallSpm"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="48dp"
             tools:layout_editor_absoluteX="-10dp"
@@ -43,9 +49,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:onClick="onClickedAntallSpm"
             android:text="@string/velg10spm"
             android:textSize="16sp"
-            android:onClick="onClickedAntallSpm"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="48dp"
             tools:layout_editor_absoluteX="-10dp"
@@ -56,9 +62,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:onClick="onClickedAntallSpm"
             android:text="@string/velg15spm"
             android:textSize="16sp"
-            android:onClick="onClickedAntallSpm"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="48dp"
             tools:layout_editor_absoluteX="-10dp"
