@@ -27,6 +27,9 @@
     <string name="velgAntallSpmTekst">Velg antall spørsmål</string>
     <string name="velgSpråkTekst">Velg språk</string>
 
+    //Stats
+    <string name="test">NORGEEE!!!!</string>
+
     //Dialog language
     <string name="dialogtekst">Er du sikker på at du vil endre språk til tysk?</string>
     <string name="ja">Ja</string>

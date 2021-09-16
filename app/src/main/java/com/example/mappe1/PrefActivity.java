@@ -1,21 +1,15 @@
 package com.example.mappe1;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
@@ -25,6 +19,9 @@ public class PrefActivity extends AppCompatActivity {
 
 
     private Spinner spinner;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor preferences_editor;
+    private SetLocaleLanguage setLocaleLanguage = new SetLocaleLanguage();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,37 +30,42 @@ public class PrefActivity extends AppCompatActivity {
         intent.getData();
         setContentView(R.layout.activity_preferences);
 
+        //Tilgang til sharedpreferences for å lagre valgt språk og antall spørsmål i spillet
+        preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
 
+        //Sett språk fra SharedPreferences
+        preferences = getSharedPreferences("Pref", MODE_PRIVATE);
+        Resources res = getResources();
+        setLocaleLanguage.setLanguage(preferences, res);
+        setContentView(R.layout.activity_preferences);
 
+        //Lager spinner (meny) for valg av språk. Språk lastes fra array.
         spinner = (Spinner) findViewById(R.id.spinnerVelgSpråk);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.språk, android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        spinner.setSelection(0);
 
 
-        //Må settes i post.Runnable for å unngå at listner kjører igjen nå siden lastes på nytt ved endring av språk
+        //Må settes i post.Runnable for å unngå at listner kjører igjen når siden lastes på nytt ved endring av språk
         spinner.post(new Runnable() {
             public void run() {
 
                 spinner.setOnItemSelectedListener(
                         new AdapterView.OnItemSelectedListener() {
+                            //Sjekker for valg av spinner og tilbyr bruker å bytte språk. Kan ikke "bytte" til gjeldende språk
                             public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-
+                                spinner.setSelection(0);
                                 Object item = parent.getItemAtPosition(pos);
                                 String currentLanguage = Locale.getDefault().getLanguage();
-                                System.out.println("POS: " + pos);
-                                System.out.println(item.toString());     //prints the text in spinner item.
-                                System.out.println(currentLanguage);
 
-                                if (item.toString().equals("Norsk") || item.toString().equals("Norwegisch")) {
+                                if (item.toString().equals("Norwegisch")) {
                                     if(!currentLanguage.equals("en") || !currentLanguage.equals("no")) {
-                                        createAndShowAlertDialog("no");
+                                        confirmLanguageDialog("no");
                                     }
                                 }
 
-                                if (item.toString().equals("Tysk") || item.toString().equals("Deutsch")) {
+                                if (item.toString().equals("Tysk")) {
                                     if(!currentLanguage.equals("en") || !currentLanguage.equals("de")) {
-                                        createAndShowAlertDialog("de");
+                                        confirmLanguageDialog("de");
                                     }
                                 }
 
@@ -77,12 +79,18 @@ public class PrefActivity extends AppCompatActivity {
     }
 
 
-    private void createAndShowAlertDialog(String lang) {
+    //Lager dialog boks, lagrer valgt språk til SharedPref, setter språk og laster siden inn på nytt
+    private void confirmLanguageDialog(String lang) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.dialogtekst);
         builder.setPositiveButton(R.string.ja, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                changeLanguage(lang);
+                preferences_editor.putString("localeLang", lang);
+                preferences_editor.apply();
+                preferences = getSharedPreferences("Pref", MODE_PRIVATE);
+                Resources res = getResources();
+                setLocaleLanguage.setLanguage(preferences, res);
+                recreate();
                 dialog.dismiss();
             }
         });
@@ -95,33 +103,28 @@ public class PrefActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void changeLanguage(String lang) {
-        Configuration configuration = getBaseContext().getResources().getConfiguration();
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration(configuration);
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-        recreate();
-    }
-
+    //Setter antall spørmål i spillet (lengde på array), lagres i SharedPref
     public void onClickedAntallSpm(View view) {
         boolean clicked = ((RadioButton) view).isChecked();
 
         switch(view.getId()) {
             case R.id.velg5spm:
                 if (clicked) {
-                    System.out.println("5");
+                    preferences_editor.putInt("questionArray_length", 5);
+                    preferences_editor.apply();
+                    break;
                 }
             case R.id.velg10spm:
                 if (clicked) {
-                    //antall spm = 10
-                    System.out.println("10");
+                    preferences_editor.putInt("questionArray_length", 10);
+                    preferences_editor.apply();
+                    break;
                 }
             case R.id.velg15spm:
                 if (clicked) {
-                    //antall spm = 15
-                    System.out.println("15");
+                    preferences_editor.putInt("questionArray_length", 15);
+                    preferences_editor.apply();
+                    break;
                 }
         }
     }

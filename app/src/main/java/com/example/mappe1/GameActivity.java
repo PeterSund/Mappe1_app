@@ -1,42 +1,52 @@
 package com.example.mappe1;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameActivity extends AppCompatActivity{
 
-    String answer = "";
-    int currentIndex = 0;
-    ArrayList<Sporsmaal> sporsmaals = new ArrayList<Sporsmaal>();
+    private String answer = "";
+    private int currentIndex = 0;
 
-    Sporsmaal spm1 = new Sporsmaal("1+1","2", false);
-    Sporsmaal spm2 = new Sporsmaal("4+5","9", false);
-    Sporsmaal spm3 = new Sporsmaal("7+8","15", false);
-    Sporsmaal spm4 = new Sporsmaal("8+3","11", false);
-    Sporsmaal spm5 = new Sporsmaal("9+9","18", false);
-    Sporsmaal spm6 = new Sporsmaal("123+123","246", false);
-    Sporsmaal spm7 = new Sporsmaal("321+321","642", false);
-    Sporsmaal spm8 = new Sporsmaal("111+111","222", false);
-    Sporsmaal spm9 = new Sporsmaal("101-100","1", false);
-    Sporsmaal spm10 = new Sporsmaal("54-5","49", false);
-    Sporsmaal spm11 = new Sporsmaal("12x12","144", false);
-    Sporsmaal spm12 = new Sporsmaal("12/6","2", false);
-    Sporsmaal spm13 = new Sporsmaal("87+3","90", false);
-    Sporsmaal spm14 = new Sporsmaal("34-20","14", false);
-    Sporsmaal spm15 = new Sporsmaal("22+22","44", false);
+    //ARRAYS SKAL LIGGER I XML I FØLGE OPPGAVETEKST. Create from resources kan brukes tror jeg. createFromResource(), se prefAct linje 44
+    private ArrayList<Question> gameQuestions = new ArrayList<Question>();
+    private ArrayList<Question> allQuestions = new ArrayList<>();
+
+    private SharedPreferences preferences;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         intent.getData();
+
+
+        //Setter antall spørsmål i spillet fra verdi i SharedPref
+        preferences = getSharedPreferences("Pref", MODE_PRIVATE);
+        int gameQuestionsArrayLength = preferences.getInt("questionArray_length", 15);
+
+        //Sett språk fra SharedPreferences
+        preferences = getSharedPreferences("Pref", MODE_PRIVATE);
+        Resources res = getResources();
+        SetLocaleLanguage setLocaleLanguage = new SetLocaleLanguage();
+        setLocaleLanguage.setLanguage(preferences, res);
+
         setContentView(R.layout.game_activity);
+
+
+
 
         Button btn1 = (Button) findViewById(R.id.button_1);
         Button btn2 = (Button) findViewById(R.id.button_2);
@@ -64,24 +74,43 @@ public class GameActivity extends AppCompatActivity{
         btnNeste.setOnClickListener(this::onClick);
         btnForrige.setOnClickListener(this::onClick);
 
-        sporsmaals.add(spm1);
-        sporsmaals.add(spm2);
-        sporsmaals.add(spm3);
-        sporsmaals.add(spm4);
-        sporsmaals.add(spm5);
-        sporsmaals.add(spm6);
-        sporsmaals.add(spm7);
-        sporsmaals.add(spm8);
-        sporsmaals.add(spm9);
-        sporsmaals.add(spm10);
-        sporsmaals.add(spm11);
-        sporsmaals.add(spm12);
-        sporsmaals.add(spm13);
-        sporsmaals.add(spm14);
-        sporsmaals.add(spm15);
+        Question spm1 = new Question("1+1","2", false);
+        Question spm2 = new Question("4+5","9", false);
+        Question spm3 = new Question("7+8","15", false);
+        Question spm4 = new Question("8+3","11", false);
+        Question spm5 = new Question("9+9","18", false);
+        Question spm6 = new Question("123+123","246", false);
+        Question spm7 = new Question("321+321","642", false);
+        Question spm8 = new Question("111+111","222", false);
+        Question spm9 = new Question("101-100","1", false);
+        Question spm10 = new Question("54-5","49", false);
+        Question spm11 = new Question("12x12","144", false);
+        Question spm12 = new Question("12/6","2", false);
+        Question spm13 = new Question("87+3","90", false);
+        Question spm14 = new Question("34-20","14", false);
+        Question spm15 = new Question("22+22","44", false);
+
+        allQuestions.add(spm1);
+        allQuestions.add(spm2);
+        allQuestions.add(spm3);
+        allQuestions.add(spm4);
+        allQuestions.add(spm5);
+        allQuestions.add(spm6);
+        allQuestions.add(spm7);
+        allQuestions.add(spm8);
+        allQuestions.add(spm9);
+        allQuestions.add(spm10);
+        allQuestions.add(spm11);
+        allQuestions.add(spm12);
+        allQuestions.add(spm13);
+        allQuestions.add(spm14);
+        allQuestions.add(spm15);
+
+        alterQuetionsList(gameQuestionsArrayLength);
 
         TextView spm = (TextView) findViewById(R.id.spmView);
-        spm.setText(sporsmaals.get(currentIndex).sporsmaal);
+        spm.setText(gameQuestions.get(currentIndex).question);
+
     }
 
     public void onClick(View view) {
@@ -131,15 +160,15 @@ public class GameActivity extends AppCompatActivity{
             case R.id.button_neste:
                 answer = "";
                 answers.setText(answer);
-                spm.setText(sporsmaals.get(currentIndex+1).sporsmaal);
+                spm.setText(gameQuestions.get(currentIndex+1).question);
                 currentIndex++;
-                sjekkSvar(currentIndex, ((String) answers.getText()));
+                checkAnswer(currentIndex, ((String) answers.getText()));
                 System.out.println((String) answers.getText());
-                System.out.println(sporsmaals.get(currentIndex).svartRiktig);
+                System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
                 break;
             case R.id.button_forrige:
                 try {
-                    spm.setText(sporsmaals.get(currentIndex - 1).sporsmaal);
+                    spm.setText(gameQuestions.get(currentIndex - 1).question);
                     currentIndex--;
                 }
                 catch (Exception e){
@@ -151,10 +180,18 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
-    public void sjekkSvar(int curIndex, String svar){
-        String riktigSvar = sporsmaals.get(curIndex).riktigSvar;
-        if (svar.equals(riktigSvar)){
-            sporsmaals.get(curIndex).setSvartRiktig(true);
+    public void checkAnswer(int curIndex, String answer){
+        String correctAnswer = gameQuestions.get(curIndex).correctAnswer;
+        if (answer.equals(correctAnswer)){
+            gameQuestions.get(curIndex).setAnsweredCorrect(true);
+        }
+    }
+
+    public void alterQuetionsList(int gameQuestionsArrayLength) {
+        Random r = new Random();
+        for(int i=0; i < gameQuestionsArrayLength; i++) {
+            Integer qnr = r.nextInt(15 - 1) + 1;
+            gameQuestions.add(allQuestions.get(qnr));
         }
     }
 }
