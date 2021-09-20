@@ -1,16 +1,19 @@
 package com.example.mappe1;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity{
@@ -19,7 +22,7 @@ public class GameActivity extends AppCompatActivity{
     private int currentIndex = 0;
 
     //ARRAYS SKAL LIGGER I XML I FØLGE OPPGAVETEKST. Create from resources kan brukes tror jeg. createFromResource(), se prefAct linje 44
-    private ArrayList<Question> gameQuestions = new ArrayList<Question>();
+    private ArrayList<Question> gameQuestions = new ArrayList<>();
     private ArrayList<Question> allQuestions = new ArrayList<>();
 
     private SharedPreferences preferences;
@@ -74,39 +77,9 @@ public class GameActivity extends AppCompatActivity{
         btnNeste.setOnClickListener(this::onClick);
         btnForrige.setOnClickListener(this::onClick);
 
-        Question spm1 = new Question("1+1","2", false);
-        Question spm2 = new Question("4+5","9", false);
-        Question spm3 = new Question("7+8","15", false);
-        Question spm4 = new Question("8+3","11", false);
-        Question spm5 = new Question("9+9","18", false);
-        Question spm6 = new Question("123+123","246", false);
-        Question spm7 = new Question("321+321","642", false);
-        Question spm8 = new Question("111+111","222", false);
-        Question spm9 = new Question("101-100","1", false);
-        Question spm10 = new Question("54+5","59", false);
-        Question spm11 = new Question("12+12","24", false);
-        Question spm12 = new Question("12+6","18", false);
-        Question spm13 = new Question("87+3","90", false);
-        Question spm14 = new Question("34+20","54", false);
-        Question spm15 = new Question("22+22","44", false);
+        fetchQuestionsFromXML(allQuestions);
 
-        allQuestions.add(spm1);
-        allQuestions.add(spm2);
-        allQuestions.add(spm3);
-        allQuestions.add(spm4);
-        allQuestions.add(spm5);
-        allQuestions.add(spm6);
-        allQuestions.add(spm7);
-        allQuestions.add(spm8);
-        allQuestions.add(spm9);
-        allQuestions.add(spm10);
-        allQuestions.add(spm11);
-        allQuestions.add(spm12);
-        allQuestions.add(spm13);
-        allQuestions.add(spm14);
-        allQuestions.add(spm15);
-
-        alterQuetionsList(gameQuestionsArrayLength);
+        alterQuestionsList(gameQuestionsArrayLength);
 
         TextView spm = (TextView) findViewById(R.id.spmView);
         spm.setText(gameQuestions.get(currentIndex).question);
@@ -114,7 +87,7 @@ public class GameActivity extends AppCompatActivity{
     }
 
     public void onClick(View view) {
-        TextView answers = (TextView) findViewById(R.id.svar);
+        TextView answers = (TextView) findViewById(R.id.answerView);
         TextView spm = (TextView) findViewById(R.id.spmView);
         switch (view.getId()){
             case R.id.button_0:
@@ -158,13 +131,23 @@ public class GameActivity extends AppCompatActivity{
                 answers.setText(answer);
                 break;
             case R.id.button_neste:
-                answer = "";
-                answers.setText(answer);
-                spm.setText(gameQuestions.get(currentIndex+1).question);
-                checkAnswer(currentIndex, ((String) answers.getText()));
-                System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
-                currentIndex++;
-                System.out.println((String) answers.getText());
+                if (currentIndex == gameQuestions.size()-1){
+
+                    //LAGRE SCORE med DATO og Tidspunkt (feks. 21.02.1998 13:30)
+
+                    confirmEndGameDialog();
+                }
+                else {
+                    String a = answers.getText().toString();
+                    System.out.println(a);
+                    System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
+                    checkAnswer(currentIndex, a);
+                    System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
+                    answer = "";
+                    answers.setText(answer);
+                    spm.setText(gameQuestions.get(currentIndex + 1).question);
+                    currentIndex++;
+                }
                 break;
             case R.id.button_forrige:
                 try {
@@ -182,16 +165,61 @@ public class GameActivity extends AppCompatActivity{
 
     public void checkAnswer(int curIndex, String answer){
         String correctAnswer = gameQuestions.get(curIndex).correctAnswer;
+        System.out.println("A:" + correctAnswer);
+        System.out.println("PENIS:" + answer);
         gameQuestions.get(curIndex).setAnsweredCorrect(answer.equals(correctAnswer));
     }
 
-    public void alterQuetionsList(int gameQuestionsArrayLength) {
+    public void alterQuestionsList(int gameQuestionsArrayLength) {
         Random r = new Random();
         for(int i=0; i < gameQuestionsArrayLength; i++) {
-            Integer qnr = r.nextInt(15 - 1) + 1;
-            int qnmbr = (int) qnr;
+            int qnr = r.nextInt(15 - 1) + 1;
             gameQuestions.add(allQuestions.get(qnr));
-            allQuestions.remove(qnmbr);
+
+            //FJERNE BRUKTE SPØRSMÅL!!!
+
+
         }
+    }
+
+    public void fetchQuestionsFromXML(ArrayList<Question> allQuestions) {
+        List<String> qs = Arrays.asList(getResources().getStringArray(R.array.questions));
+        for (int i = 0; i < qs.size(); i++){
+            String [] a = qs.get(i).split(",");
+            Question b = new Question(a[1], a[0], false);
+            allQuestions.add(b);
+        }
+        for (int i = 0; i < allQuestions.size(); i++){
+            System.out.println(allQuestions.get(i).toString());
+        }
+    }
+
+    private void confirmEndGameDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.dialogtekst_score + " " + correctAnswersCount() +"/"+ gameQuestions.size());
+        builder.setPositiveButton("Prøv på nytt!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                recreate();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Gå til meny", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //RERDIRECT TIL MENY
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private int correctAnswersCount(){
+        int c = 0;
+        for (int i = 0; i < gameQuestions.size(); i++) {
+            if(gameQuestions.get(i).answeredCorrect){
+                c++;
+            }
+        }
+        return c;
     }
 }

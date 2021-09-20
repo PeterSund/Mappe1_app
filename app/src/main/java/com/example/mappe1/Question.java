@@ -34,4 +34,10 @@ public class Question {
     public void setAnsweredCorrect(boolean answeredCorrect) {
         this.answeredCorrect = answeredCorrect;
     }
+    @Override
+    public String toString() {
+        return ("Q:"+this.getQuestion()+
+                "\n A: "+ this.getCorrectAnswer() +
+                "\n AC: "+ this.isAnsweredCorrect());
+    }
 }

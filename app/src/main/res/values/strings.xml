@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="Typos">
-    //Menu
+    //GameActivity
     <string name="app_name">Mappe1</string>
     <string name="game_neste">Neste</string>
     <string name="game_forrige">Forrige</string>
@@ -16,6 +16,9 @@
     <string name="game_0">0</string>
     <string name="game_answer"> </string>
     <string name="svar">Svar: </string>
+    <string name="dialogtekst_score">Kjempe bra! Du klarte: </string>
+
+    //Menu
     <string name="menyStats">Statistikk</string>
     <string name="menyStart">Spill</string>
     <string name="menyPref">Preferanser</string>
