@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrefActivity">
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="281dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/velgAntallSpm">
+
+        <RadioButton
+            android:id="@+id/velg5spm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:onClick="onClickedAntallSpm"
+            android:text="@string/velg5spm"
+            android:textSize="16sp"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="48dp"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="176dp" />
+
+        <RadioButton
+            android:id="@+id/velg10spm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:onClick="onClickedAntallSpm"
+            android:text="@string/velg10spm"
+            android:textSize="16sp"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="48dp"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="224dp" />
+
+        <RadioButton
+            android:id="@+id/velg15spm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:onClick="onClickedAntallSpm"
+            android:text="@string/velg15spm"
+            android:textSize="16sp"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="48dp"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="272dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/velgAntallSpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/velgAntallSpmTekst"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/velgSpråkTekst"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Spinner
+        android:id="@+id/spinnerVelgSpråk"
+        android:layout_width="306dp"
+        android:layout_height="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.074"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</android.support.constraint.ConstraintLayout>

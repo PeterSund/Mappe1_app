@@ -9,15 +9,26 @@
         <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2625" />
         <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2625" />
         <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout-land/activity_main.xml" value="0.17372134038800705" />
+        <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout-land/activity_preferences.xml" value="0.33" />
+        <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout-land/activity_stats.xml" value="0.33" />
         <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout/activity_preferences.xml" value="0.33" />
-        <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout/activity_stats.xml" value="0.2015625" />
+        <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout/activity_stats.xml" value="0.28542094455852157" />
+        <entry key="..\:/Users/peter/Desktop/DAVE3600/Mappe1/app/src/main/res/layout/game_activity.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2015625" />
+      </ProjectState>
+    </option>
   </component>
 </project>

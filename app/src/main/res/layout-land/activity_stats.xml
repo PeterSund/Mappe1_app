@@ -8,14 +8,13 @@
 
     <TableLayout
         android:id="@+id/statsTable"
-        android:layout_width="111dp"
-        android:layout_height="399dp"
+        android:layout_width="220dp"
+        android:layout_height="248dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:id="@+id/statsRowGame1"
@@ -79,42 +78,16 @@
 
     </TableLayout>
 
-    <TextView
-        android:id="@+id/statsInfoTxtScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="@string/statsTableHeaderScore"
-        app:layout_constraintBottom_toTopOf="@+id/statsTableScore"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
-        app:layout_constraintStart_toEndOf="@+id/statsInfoTxtGame"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
-
-    <TextView
-        android:id="@+id/statsInfoTxtGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/statsTableHeaderGame"
-        app:layout_constraintBottom_toTopOf="@+id/statsTable"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
-
     <TableLayout
         android:id="@+id/statsTableScore"
-        android:layout_width="132dp"
-        android:layout_height="352dp"
+        android:layout_width="252dp"
+        android:layout_height="248dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/statsTable"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364">
+        app:layout_constraintVertical_bias="0.48">
 
         <TableRow
             android:layout_width="match_parent"
@@ -172,19 +145,43 @@
         </TableRow>
     </TableLayout>
 
+    <TextView
+        android:id="@+id/statsInfoTxtScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/statsTableHeaderScore"
+        app:layout_constraintBottom_toTopOf="@+id/statsTableScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toEndOf="@+id/statsInfoTxtGame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/statsInfoTxtGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/statsTableHeaderGame"
+        app:layout_constraintBottom_toTopOf="@+id/statsTable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <Button
         android:id="@+id/statsDeleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="confirmDeleteDialog"
         android:text="@string/statsBtnTxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statsTable"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="OnClick" />
+        app:layout_constraintVertical_bias="0.43" />
 
     <TextView
         android:id="@+id/statsHeader"
@@ -193,6 +190,8 @@
         android:text="@string/statsHeader"
         app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571" />
 </android.support.constraint.ConstraintLayout>

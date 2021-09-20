@@ -28,7 +28,25 @@
     <string name="velgSpråkTekst">Velg språk</string>
 
     //Stats
-    <string name="test">NORGEEE!!!!</string>
+    <string name="statsHeader">Statistikk</string>
+    <string name="statsTableHeaderGame">Spill</string>
+    <string name="statsTableHeaderScore">Poeng</string>
+
+    <string name="statsTableGameTxt1">Spill 1 10.01.2021</string>
+    <string name="statsTableGameTxt2">Spill 1 10.01.2021</string>
+    <string name="statsTableGameTxt3">Spill 1 10.01.2021</string>
+    <string name="statsTableGameTxt4">Spill 1 10.01.2021</string>
+    <string name="statsTableGameTxt5">Spill 1 10.01.2021</string>
+
+    <string name="statsTableGameScoreTxt1">1 / 5</string>
+    <string name="statsTableGameScoreTxt2">1 / 5</string>
+    <string name="statsTableGameScoreTxt3">1 / 5</string>
+    <string name="statsTableGameScoreTxt4">1 / 5</string>
+    <string name="statsTableGameScoreTxt5">1 / 5</string>
+
+    <string name="statsBtnTxt">Slett alle statistikk</string>
+    <string name="dialogtekst_stats">Er du sikkert på at du vil slette all statisikk?</string>
+
 
     //Dialog language
     <string name="dialogtekst">Er du sikker på at du vil endre språk til tysk?</string>
