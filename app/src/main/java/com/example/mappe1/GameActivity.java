@@ -83,11 +83,11 @@ public class GameActivity extends AppCompatActivity{
         Question spm7 = new Question("321+321","642", false);
         Question spm8 = new Question("111+111","222", false);
         Question spm9 = new Question("101-100","1", false);
-        Question spm10 = new Question("54-5","49", false);
-        Question spm11 = new Question("12x12","144", false);
-        Question spm12 = new Question("12/6","2", false);
+        Question spm10 = new Question("54+5","59", false);
+        Question spm11 = new Question("12+12","24", false);
+        Question spm12 = new Question("12+6","18", false);
         Question spm13 = new Question("87+3","90", false);
-        Question spm14 = new Question("34-20","14", false);
+        Question spm14 = new Question("34+20","54", false);
         Question spm15 = new Question("22+22","44", false);
 
         allQuestions.add(spm1);
@@ -161,10 +161,10 @@ public class GameActivity extends AppCompatActivity{
                 answer = "";
                 answers.setText(answer);
                 spm.setText(gameQuestions.get(currentIndex+1).question);
-                currentIndex++;
                 checkAnswer(currentIndex, ((String) answers.getText()));
-                System.out.println((String) answers.getText());
                 System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
+                currentIndex++;
+                System.out.println((String) answers.getText());
                 break;
             case R.id.button_forrige:
                 try {
@@ -182,16 +182,16 @@ public class GameActivity extends AppCompatActivity{
 
     public void checkAnswer(int curIndex, String answer){
         String correctAnswer = gameQuestions.get(curIndex).correctAnswer;
-        if (answer.equals(correctAnswer)){
-            gameQuestions.get(curIndex).setAnsweredCorrect(true);
-        }
+        gameQuestions.get(curIndex).setAnsweredCorrect(answer.equals(correctAnswer));
     }
 
     public void alterQuetionsList(int gameQuestionsArrayLength) {
         Random r = new Random();
         for(int i=0; i < gameQuestionsArrayLength; i++) {
             Integer qnr = r.nextInt(15 - 1) + 1;
+            int qnmbr = (int) qnr;
             gameQuestions.add(allQuestions.get(qnr));
+            allQuestions.remove(qnmbr);
         }
     }
 }
