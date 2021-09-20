@@ -9,6 +9,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import java.util.Set;
+
 public class StatsActivity extends AppCompatActivity {
 
     private SharedPreferences preferences;
@@ -25,12 +27,19 @@ public class StatsActivity extends AppCompatActivity {
         SetLocaleLanguage setLocaleLanguage = new SetLocaleLanguage();
         setLocaleLanguage.setLanguage(preferences, res);
         setContentView(R.layout.activity_stats);
+        loadAndSetStats();
     }
 
     public void loadAndSetStats() {
         //last inn fra shared pref eller array i xml
         //sett i table
+        Set<String> scoreSet = preferences.getStringSet("scores", null);
+        for (String s : scoreSet) {
+            System.out.println(s);
+        }
+
     }
+
 
     public void deleteAllStatistics() {
         //slett alle statistic og load inn på nytt (kall loadAndSet())

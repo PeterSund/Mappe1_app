@@ -11,10 +11,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class GameActivity extends AppCompatActivity{
 
@@ -26,6 +31,7 @@ public class GameActivity extends AppCompatActivity{
     private ArrayList<Question> allQuestions = new ArrayList<>();
 
     private SharedPreferences preferences;
+    private SharedPreferences.Editor preferences_editor;
 
 
 
@@ -132,6 +138,30 @@ public class GameActivity extends AppCompatActivity{
                 break;
             case R.id.button_neste:
                 if (currentIndex == gameQuestions.size()-1){
+                    preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
+                    Set<String> scores = preferences.getStringSet("scores", null );
+                    if (scores == null) {
+                        Set<String> scores1 = new HashSet<>();
+                        String scoreForSaving = "";
+                        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+                        scoreForSaving += "Game " + timeStamp;
+                        String scoreCount = String.valueOf(correctAnswersCount());
+                        String maxScoreCount = String.valueOf(gameQuestions.size());
+                        scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
+                        scores1.add(scoreForSaving);
+                        preferences_editor.putStringSet("scores", scores1);
+                        preferences_editor.apply();
+                    } else {
+                        String scoreForSaving = "";
+                        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+                        scoreForSaving += "Game " + timeStamp;
+                        String scoreCount = String.valueOf(correctAnswersCount());
+                        String maxScoreCount = String.valueOf(gameQuestions.size());
+                        scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
+                        scores.add(scoreForSaving);
+                        preferences_editor.putStringSet("scores", scores);
+                        preferences_editor.apply();
+                    }
 
                     //LAGRE SCORE med DATO og Tidspunkt (feks. 21.02.1998 13:30)
 
@@ -166,7 +196,7 @@ public class GameActivity extends AppCompatActivity{
     public void checkAnswer(int curIndex, String answer){
         String correctAnswer = gameQuestions.get(curIndex).correctAnswer;
         System.out.println("A:" + correctAnswer);
-        System.out.println("PENIS:" + answer);
+        System.out.println("Test:" + answer);
         gameQuestions.get(curIndex).setAnsweredCorrect(answer.equals(correctAnswer));
     }
 
