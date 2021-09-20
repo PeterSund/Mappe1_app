@@ -138,33 +138,8 @@ public class GameActivity extends AppCompatActivity{
                 break;
             case R.id.button_neste:
                 if (currentIndex == gameQuestions.size()-1){
-                    preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
-                    Set<String> scores = preferences.getStringSet("scores", null );
-                    if (scores == null) {
-                        Set<String> scores1 = new HashSet<>();
-                        String scoreForSaving = "";
-                        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-                        scoreForSaving += "Game " + timeStamp;
-                        String scoreCount = String.valueOf(correctAnswersCount());
-                        String maxScoreCount = String.valueOf(gameQuestions.size());
-                        scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
-                        scores1.add(scoreForSaving);
-                        preferences_editor.putStringSet("scores", scores1);
-                        preferences_editor.apply();
-                    } else {
-                        String scoreForSaving = "";
-                        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-                        scoreForSaving += "Game " + timeStamp;
-                        String scoreCount = String.valueOf(correctAnswersCount());
-                        String maxScoreCount = String.valueOf(gameQuestions.size());
-                        scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
-                        scores.add(scoreForSaving);
-                        preferences_editor.putStringSet("scores", scores);
-                        preferences_editor.apply();
-                    }
-
                     //LAGRE SCORE med DATO og Tidspunkt (feks. 21.02.1998 13:30)
-
+                    saveScoreToSharedpreferences();
                     confirmEndGameDialog();
                 }
                 else {
@@ -179,6 +154,7 @@ public class GameActivity extends AppCompatActivity{
                     currentIndex++;
                 }
                 break;
+
             case R.id.button_forrige:
                 try {
                     spm.setText(gameQuestions.get(currentIndex - 1).question);
@@ -241,6 +217,36 @@ public class GameActivity extends AppCompatActivity{
         });
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void saveScoreToSharedpreferences() {
+        preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
+        Set<String> scores = preferences.getStringSet("scores", null );
+
+        // Kjøres første gang man lagrer score da settet ikke finnes i sharedpreferences
+        if (scores == null) {
+            Set<String> scores1 = new HashSet<>();
+            String scoreForSaving = "";
+            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            scoreForSaving += "Game " + timeStamp;
+            String scoreCount = String.valueOf(correctAnswersCount());
+            String maxScoreCount = String.valueOf(gameQuestions.size());
+            scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
+            scores1.add(scoreForSaving);
+            preferences_editor.putStringSet("scores", scores1);
+            preferences_editor.apply();
+        } else {
+            String scoreForSaving = "";
+            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            scoreForSaving += "Game " + timeStamp;
+            String scoreCount = String.valueOf(correctAnswersCount());
+            String maxScoreCount = String.valueOf(gameQuestions.size());
+            scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
+            scores.add(scoreForSaving);
+            preferences_editor.putStringSet("scores", scores);
+            preferences_editor.apply();
+        }
+
     }
 
     private int correctAnswersCount(){
