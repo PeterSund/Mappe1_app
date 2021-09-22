@@ -44,6 +44,7 @@
     <string name="statsTableGameTxt10"></string>
 
     <string name="totalScore"></string>
+    <string name="scoreDivider">/</string>
     <string name="totalMaxScore"></string>
 
     <string name="tableExceptionText">Kunne ikke laste inn statistikk></string>

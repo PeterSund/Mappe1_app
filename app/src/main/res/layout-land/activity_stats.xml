@@ -25,7 +25,8 @@
                 android:id="@+id/statsGameTxt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt1" />
+                android:text="@string/statsTableGameTxt1"
+                android:textSize="18dp"/>
         </TableRow>
 
         <TableRow
@@ -37,7 +38,8 @@
                 android:id="@+id/statsGameTxt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt2" />
+                android:text="@string/statsTableGameTxt2"
+                android:textSize="18dp"/>
         </TableRow>
 
         <TableRow
@@ -49,7 +51,8 @@
                 android:id="@+id/statsGameTxt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt3" />
+                android:text="@string/statsTableGameTxt3"
+                android:textSize="18dp"/>
         </TableRow>
 
         <TableRow
@@ -61,19 +64,21 @@
                 android:id="@+id/statsGameTxt4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt4" />
+                android:text="@string/statsTableGameTxt4"
+                android:textSize="18dp"/>
         </TableRow>
 
         <TableRow
-            android:id="@+id/statsRowGame6"
+            android:id="@+id/statsRowGame5"
             android:layout_width="125dp"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/statsGameTxt6"
+                android:id="@+id/statsGameTxt5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt5" />
+                android:text="@string/statsTableGameTxt5"
+                android:textSize="18dp"/>
         </TableRow>
 
     </TableLayout>
