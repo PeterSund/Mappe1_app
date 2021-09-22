@@ -34,7 +34,7 @@
 
     //Stats
     <string name="statsHeader">Statistikk</string>
-    <string name="statsTableHeaderGame">Siste 5 spill:</string>
+    <string name="statsTableHeaderGame">Siste spill:</string>
     <string name="statsTableHeaderScore">Poeng totalt:</string>
 
     <string name="statsTableGameTxt1"></string>
@@ -56,7 +56,7 @@
     <string name="tableExceptionText">Kunne ikke laste inn statistikk></string>
 
 
-    <string name="statsBtnTxt">Slett alle statistikk</string>
+    <string name="statsBtnTxt">Slett all statistikk</string>
     <string name="dialogtekst_stats">Er du sikker på at du vil slette all statisikk?</string>
 
 
