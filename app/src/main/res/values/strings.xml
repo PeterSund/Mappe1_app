@@ -35,20 +35,26 @@
     <string name="statsTableHeaderGame">Spill</string>
     <string name="statsTableHeaderScore">Poeng</string>
 
-    <string name="statsTableGameTxt1">Spill 1 10.01.2021</string>
-    <string name="statsTableGameTxt2">Spill 1 10.01.2021</string>
-    <string name="statsTableGameTxt3">Spill 1 10.01.2021</string>
-    <string name="statsTableGameTxt4">Spill 1 10.01.2021</string>
-    <string name="statsTableGameTxt5">Spill 1 10.01.2021</string>
+    <string name="statsTableGameTxt1"></string>
+    <string name="statsTableGameTxt2"></string>
+    <string name="statsTableGameTxt3"></string>
+    <string name="statsTableGameTxt4"></string>
+    <string name="statsTableGameTxt5"></string>
+    <string name="statsTableGameTxt6"></string>
+    <string name="statsTableGameTxt7"></string>
+    <string name="statsTableGameTxt8"></string>
+    <string name="statsTableGameTxt9"></string>
+    <string name="statsTableGameTxt10"></string>
 
-    <string name="statsTableGameScoreTxt1">1 / 5</string>
-    <string name="statsTableGameScoreTxt2">1 / 5</string>
-    <string name="statsTableGameScoreTxt3">1 / 5</string>
-    <string name="statsTableGameScoreTxt4">1 / 5</string>
-    <string name="statsTableGameScoreTxt5">1 / 5</string>
+    <string name="totalScore"></string>
+    <string name="totalMaxScore"></string>
+
+
+    <string name="tableExceptionText">Kunne ikke laste inn statistikk></string>
+
 
     <string name="statsBtnTxt">Slett alle statistikk</string>
-    <string name="dialogtekst_stats">Er du sikkert på at du vil slette all statisikk?</string>
+    <string name="dialogtekst_stats">Er du sikker på at du vil slette all statisikk?</string>
 
 
     //Dialog language

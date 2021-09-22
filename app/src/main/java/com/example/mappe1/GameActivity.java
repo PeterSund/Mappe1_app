@@ -227,25 +227,50 @@ public class GameActivity extends AppCompatActivity{
         if (scores == null) {
             Set<String> scores1 = new HashSet<>();
             String scoreForSaving = "";
-            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new Date());
             scoreForSaving += "Game " + timeStamp;
             String scoreCount = String.valueOf(correctAnswersCount());
             String maxScoreCount = String.valueOf(gameQuestions.size());
-            scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
+            scoreForSaving += "       " + scoreCount + "/" + maxScoreCount;
             scores1.add(scoreForSaving);
             preferences_editor.putStringSet("scores", scores1);
             preferences_editor.apply();
         } else {
             String scoreForSaving = "";
-            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new Date());
             scoreForSaving += "Game " + timeStamp;
             String scoreCount = String.valueOf(correctAnswersCount());
             String maxScoreCount = String.valueOf(gameQuestions.size());
-            scoreForSaving += "@" + scoreCount + "/" + maxScoreCount;
+            scoreForSaving += "       " + scoreCount + "/" + maxScoreCount;
             scores.add(scoreForSaving);
             preferences_editor.putStringSet("scores", scores);
             preferences_editor.apply();
         }
+
+        // Legger til poeng og maks poeng totalt
+        int totalScore = preferences.getInt("totalScore", -1);
+        int totalMaxScore = preferences.getInt("totalMaxScore", -1);
+
+        //Kjøres første gang da feltene ikke ligger i sharedpref
+        if (totalScore == -1 || totalMaxScore == -1) {
+            int score = correctAnswersCount();
+            preferences_editor.putInt("totalScore", score);
+            preferences_editor.apply();
+
+            int maxScore = gameQuestions.size();
+            preferences_editor.putInt("totalMaxScore", maxScore);
+            preferences_editor.apply();
+
+        } else {
+            totalScore = totalScore + correctAnswersCount();
+            preferences_editor.putInt("totalScore", totalScore);
+            preferences_editor.apply();
+
+            totalMaxScore = totalMaxScore + gameQuestions.size();
+            preferences_editor.putInt("totalMaxScore", totalMaxScore);
+            preferences_editor.apply();
+        }
+
 
     }
 
