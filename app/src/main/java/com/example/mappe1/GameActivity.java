@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -137,9 +138,8 @@ public class GameActivity extends AppCompatActivity{
                 answers.setText(answer);
                 break;
             case R.id.button_neste:
-                if (currentIndex == gameQuestions.size()-1){
-                    //LAGRE SCORE med DATO og Tidspunkt (feks. 21.02.1998 13:30)
-                    saveScoreToSharedpreferences();
+                if (currentIndex == gameQuestions.size()-1) {
+                    saveScoreToSharedPreferences();
                     confirmEndGameDialog();
                 }
                 else {
@@ -211,15 +211,15 @@ public class GameActivity extends AppCompatActivity{
         });
         builder.setNegativeButton("Gå til meny", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                //RERDIRECT TIL MENY
                 dialog.dismiss();
+                finish();
             }
         });
         AlertDialog dialog = builder.create();
         dialog.show();
     }
 
-    private void saveScoreToSharedpreferences() {
+    private void saveScoreToSharedPreferences() {
         preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
         Set<String> scores = preferences.getStringSet("scores", null );
 
