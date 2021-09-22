@@ -4,7 +4,7 @@
     <string name="app_name">Mappe1</string>
     <string name="game_neste">Neste</string>
     <string name="game_forrige">Forrige</string>
-    <string name="dino_spm">Hva er</string>
+    <string name="dino_spm">Was ist</string>
     <string name="game_1">1</string>
     <string name="game_2">2</string>
     <string name="game_3">3</string>
@@ -15,7 +15,7 @@
     <string name="game_8">8</string>
     <string name="game_9">9</string>
     <string name="game_0">0</string>
-    <string name="svar">Antworten: </string>
+    <string name="svar">Meine Antwort ist: </string>
     <string name="menyStats">LOOOOL</string>
     <string name="menyStart">HEEEEI</string>
     <string name="menyPref">tysk jo</string>

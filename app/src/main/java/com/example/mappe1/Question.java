@@ -1,6 +1,9 @@
 package com.example.mappe1;
 
-public class Question {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Question implements Parcelable {
     String question;
     String correctAnswer;
     boolean answeredCorrect;
@@ -10,6 +13,24 @@ public class Question {
         this.question = correctAnswer;
         this.answeredCorrect = answeredCorrect;
     }
+
+    protected Question(Parcel in) {
+        question = in.readString();
+        correctAnswer = in.readString();
+        answeredCorrect = in.readByte() != 0;
+    }
+
+    public static final Creator<Question> CREATOR = new Creator<Question>() {
+        @Override
+        public Question createFromParcel(Parcel in) {
+            return new Question(in);
+        }
+
+        @Override
+        public Question[] newArray(int size) {
+            return new Question[size];
+        }
+    };
 
     public String getQuestion() {
         return question;
@@ -39,5 +60,17 @@ public class Question {
         return ("Q:"+this.getQuestion()+
                 "\n A: "+ this.getCorrectAnswer() +
                 "\n AC: "+ this.isAnsweredCorrect());
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(question);
+        parcel.writeString(correctAnswer);
+        parcel.writeByte((byte) (answeredCorrect ? 1 : 0));
     }
 }
