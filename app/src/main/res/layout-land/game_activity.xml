@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8CC5BF"
     tools:context=".GameActivity"
-    tools:ignore="Typos"
-    >
+    tools:ignore="Typos">
 
     <TableLayout
-        android:layout_width="265dp"
-        android:layout_height="333dp"
+        android:id="@+id/tableLayout"
+        android:layout_width="262dp"
+        android:layout_height="319dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53">
+        app:layout_constraintVertical_bias="1.0">
 
         <TableRow
             android:layout_width="match_parent"
@@ -24,21 +25,24 @@
 
             <Button
                 android:id="@+id/button_1"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_1" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_1"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_2"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_2" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_2"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_3"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_3" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_3"
+                android:textSize="25sp" />
 
         </TableRow>
 
@@ -48,21 +52,24 @@
 
             <Button
                 android:id="@+id/button_4"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_4" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_4"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_5"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_5" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_5"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_6"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_6" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_6"
+                android:textSize="25sp" />
 
         </TableRow>
 
@@ -72,21 +79,24 @@
 
             <Button
                 android:id="@+id/button_7"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_7" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_7"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_8"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_8" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_8"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_9"
-                android:layout_width="88dp"
-                android:layout_height="88dp"
-                android:text="@string/game_9" />
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:text="@string/game_9"
+                android:textSize="25sp" />
 
         </TableRow>
 
@@ -98,20 +108,109 @@
                 android:id="@+id/button_forrige"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
-                android:text="@string/game_forrige" />
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/backspace"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/game_forrige"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_0"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
-                android:text="@string/game_0" />
+                android:text="@string/game_0"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_neste"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
-                android:text="@string/game_neste" />
+                android:background="@android:color/transparent"
+                android:drawableEnd="@drawable/checked"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/game_neste"
+                android:textSize="25sp" />
 
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/spmView"
+        android:layout_width="86dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002" />
+
+    <TextView
+        android:id="@+id/svar"
+        android:layout_width="192dp"
+        android:layout_height="34dp"
+        android:fontFamily="casual"
+        android:text="@string/svar"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/answerView"
+        android:layout_width="160dp"
+        android:layout_height="57dp"
+        android:text="@string/game_answer"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svar"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="122dp"
+        android:layout_height="146dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@drawable/drawing" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="156dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="122dp"
+        android:fontFamily="casual"
+        android:text="@string/dino_spm"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spmView"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="64dp"
+        android:layout_height="42dp"
+        android:text="@string/question_mark"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/tableLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/spmView"
+        tools:layout_editor_absoluteY="82dp" />
+
 </android.support.constraint.ConstraintLayout>
