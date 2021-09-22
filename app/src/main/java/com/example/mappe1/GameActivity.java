@@ -153,12 +153,13 @@ public class GameActivity extends AppCompatActivity{
                 answers.setText(answer);
                 break;
             case R.id.button_neste:
+                String a = answers.getText().toString();
                 if (currentIndex == gameQuestions.size()-1) {
+                    checkAnswer(currentIndex, a);
                     saveScoreToSharedPreferences();
                     confirmEndGameDialog();
                 }
                 else {
-                    String a = answers.getText().toString();
                     System.out.println(a);
                     System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
                     checkAnswer(currentIndex, a);
