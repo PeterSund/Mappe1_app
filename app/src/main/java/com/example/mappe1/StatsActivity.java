@@ -56,14 +56,11 @@ public class StatsActivity extends AppCompatActivity {
         int totalMaxScore = preferences.getInt("totalMaxScore", -1);
 
         TextView totalScoreTxt = (TextView) findViewById(R.id.totalScore);
-        TextView totalMaxScoreTxt = (TextView) findViewById(R.id.totalMaxScore);
 
         if(totalMaxScore != -1 && totalScore != -1) {
-            totalScoreTxt.setText(String.valueOf(totalScore));
-            totalMaxScoreTxt.setText(String.valueOf(totalMaxScore));
+            totalScoreTxt.setText(String.valueOf(totalScore) + " / " + String.valueOf(totalMaxScore));
         } else {
-            totalScoreTxt.setText("0");
-            totalMaxScoreTxt.setText("0");
+            totalScoreTxt.setText("0/0");
         }
 
     }

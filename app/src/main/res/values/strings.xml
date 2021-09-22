@@ -34,8 +34,8 @@
 
     //Stats
     <string name="statsHeader">Statistikk</string>
-    <string name="statsTableHeaderGame">Spill</string>
-    <string name="statsTableHeaderScore">Poeng</string>
+    <string name="statsTableHeaderGame">Siste spill:</string>
+    <string name="statsTableHeaderScore">Poeng totalt:</string>
 
     <string name="statsTableGameTxt1"></string>
     <string name="statsTableGameTxt2"></string>
@@ -49,13 +49,14 @@
     <string name="statsTableGameTxt10"></string>
 
     <string name="totalScore"></string>
+    <string name="scoreDivider">/</string>
     <string name="totalMaxScore"></string>
 
 
     <string name="tableExceptionText">Kunne ikke laste inn statistikk></string>
 
 
-    <string name="statsBtnTxt">Slett alle statistikk</string>
+    <string name="statsBtnTxt">Slett all statistikk</string>
     <string name="dialogtekst_stats">Er du sikker på at du vil slette all statisikk?</string>
 
 

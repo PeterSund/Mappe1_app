@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8CC5BF"
+    android:fontFamily="casual"
     tools:context=".StatsActivity">
 
     <TableLayout
         android:id="@+id/statsTable"
-        android:layout_width="287dp"
-        android:layout_height="233dp"
+        android:layout_width="250dp"
+        android:layout_height="135dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716">
+        app:layout_constraintVertical_bias="0.728">
 
         <TableRow
             android:id="@+id/statsRowGame1"
@@ -26,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt1"
-                android:textSize="40px"/>
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow
@@ -39,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt2"
-                android:textSize="40px"/>
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow
@@ -52,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt3"
-                android:textSize="40px"/>
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow
@@ -65,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt4"
-                android:textSize="40px"/>
+                android:textSize="16sp" />
         </TableRow>
 
         <TableRow
@@ -78,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt5"
-                android:textSize="40px"/>
+                android:textSize="16sp" />
         </TableRow>
 
     </TableLayout>
@@ -87,27 +89,28 @@
         android:id="@+id/statsInfoTxtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="49dp"
         android:text="@string/statsTableHeaderScore"
-        app:layout_constraintBottom_toTopOf="@+id/statsTable"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/totalScore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
-        app:layout_constraintStart_toEndOf="@+id/statsInfoTxtGame"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/statsInfoTxtGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="126dp"
+        android:layout_height="32dp"
         android:layout_marginBottom="8dp"
         android:text="@string/statsTableHeaderGame"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/statsTable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/statsDeleteBtn"
@@ -117,10 +120,10 @@
         android:text="@string/statsBtnTxt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statsTable"
-        app:layout_constraintVertical_bias="0.351"
+        app:layout_constraintVertical_bias="0.297"
         tools:ignore="OnClick" />
 
     <TextView
@@ -128,30 +131,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/statsHeader"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <TextView
         android:id="@+id/totalScore"
-        android:layout_width="83dp"
-        android:layout_height="81dp"
+        android:layout_width="191dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="68dp"
         android:text="@string/totalScore"
+        android:textColor="#000000"
+        android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtGame"
-        app:layout_constraintEnd_toStartOf="@+id/totalMaxScore"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/totalMaxScore"
-        android:layout_width="103dp"
-        android:layout_height="97dp"
-        android:text="@string/totalMaxScore"
-        app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="54dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/statsTable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="@+id/totalScore"
+        app:layout_constraintTop_toBottomOf="@+id/statsInfoTxtScore"
+        app:layout_constraintVertical_bias="0.55"
+        app:srcCompat="@drawable/medal_stats" />
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="totalScore" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="82dp"
+        android:layout_height="87dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/totalScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/group"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235"
+        app:srcCompat="@drawable/stats_dino" />
+
 </android.support.constraint.ConstraintLayout>
