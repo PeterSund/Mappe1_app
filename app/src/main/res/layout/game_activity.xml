@@ -138,7 +138,8 @@
         android:layout_width="86dp"
         android:layout_height="44dp"
         android:layout_marginTop="16dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
@@ -192,7 +193,7 @@
         android:layout_height="47dp"
         android:fontFamily="casual"
         android:text="@string/dino_spm"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/spmView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -206,12 +207,23 @@
         android:layout_width="64dp"
         android:layout_height="42dp"
         android:text="@string/question_mark"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/spmView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/spmView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/questionCount"
+        android:layout_width="61dp"
+        android:layout_height="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

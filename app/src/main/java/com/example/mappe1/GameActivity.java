@@ -1,3 +1,14 @@
+/*
+Fikse ikke gjenbruk av spørsmål - mats
+Implementere preferanser som fragments - tar oss mellom 30 min - 30 timer - peter
+Design av preferanser og meny - felles
+Lage flere/bedre spørsmål - mats
+Legge inn tysk i string XML - peter
+TESTE - felles
+RAPPORT - felles
+KOMMENTERE SPAGHETTI - felles
+*/
+
 package com.example.mappe1;
 
 import android.content.DialogInterface;
@@ -24,6 +35,7 @@ public class GameActivity extends AppCompatActivity{
 
     private String answer = "";
     private int currentIndex = 0;
+    private String countQuestion = "";
 
     //ARRAYS SKAL LIGGER I XML I FØLGE OPPGAVETEKST. Create from resources kan brukes tror jeg. createFromResource(), se prefAct linje 44
     private ArrayList<Question> gameQuestions = new ArrayList<>();
@@ -88,6 +100,7 @@ public class GameActivity extends AppCompatActivity{
             currentIndex = savedInstanceState.getInt("index");
             answer = savedInstanceState.getString("answer");
             gameQuestions = savedInstanceState.getParcelableArrayList("gameQuestions");
+            countQuestion = savedInstanceState.getString("countQuestions");
             TextView answers = (TextView) findViewById(R.id.answerView);
             answers.setText(answer);
         }
@@ -95,9 +108,14 @@ public class GameActivity extends AppCompatActivity{
             fetchQuestionsFromXML(allQuestions);
 
             alterQuestionsList(gameQuestionsArrayLength);
+
+            countQuestion = (currentIndex+1) + "/" + (gameQuestions.size());
         }
         TextView spm = (TextView) findViewById(R.id.spmView);
         spm.setText(gameQuestions.get(currentIndex).question);
+
+        TextView count = (TextView) findViewById(R.id.questionCount);
+        count.setText(countQuestion);
     }
 
     @Override
@@ -106,11 +124,13 @@ public class GameActivity extends AppCompatActivity{
         outState.putString("answer", answer);
         outState.putInt("index", currentIndex);
         outState.putParcelableArrayList("gameQuestions", gameQuestions);
+        outState.putString("countQuestions", countQuestion);
     }
 
     public void onClick(View view) {
         TextView answers = (TextView) findViewById(R.id.answerView);
         TextView spm = (TextView) findViewById(R.id.spmView);
+        TextView count = (TextView) findViewById(R.id.questionCount);
         switch (view.getId()){
             case R.id.button_0:
                 answer += "0";
@@ -154,6 +174,7 @@ public class GameActivity extends AppCompatActivity{
                 break;
             case R.id.button_neste:
                 String a = answers.getText().toString();
+                countQuestion = (currentIndex+2) + "/" + (gameQuestions.size());
                 if (currentIndex == gameQuestions.size()-1) {
                     checkAnswer(currentIndex, a);
                     saveScoreToSharedPreferences();
@@ -168,6 +189,7 @@ public class GameActivity extends AppCompatActivity{
                     answers.setText(answer);
                     spm.setText(gameQuestions.get(currentIndex + 1).question);
                     currentIndex++;
+                    count.setText(countQuestion);
                 }
                 break;
 
@@ -230,14 +252,8 @@ public class GameActivity extends AppCompatActivity{
 
     private void confirmEndGameDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.dialogtekst_score + " " + correctAnswersCount() +"/"+ gameQuestions.size());
-        builder.setPositiveButton("Prøv på nytt!", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                recreate();
-                dialog.dismiss();
-            }
-        });
-        builder.setNegativeButton("Gå til meny", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.dialogtekst_score) + " " + correctAnswersCount() +"/"+ gameQuestions.size());
+        builder.setPositiveButton("OK!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
                 finish();
