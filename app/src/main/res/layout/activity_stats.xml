@@ -8,14 +8,13 @@
 
     <TableLayout
         android:id="@+id/statsTable"
-        android:layout_width="111dp"
-        android:layout_height="399dp"
+        android:layout_width="287dp"
+        android:layout_height="233dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415">
+        app:layout_constraintVertical_bias="0.716">
 
         <TableRow
             android:id="@+id/statsRowGame1"
@@ -26,7 +25,8 @@
                 android:id="@+id/statsGameTxt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt1" />
+                android:text="@string/statsTableGameTxt1"
+                android:textSize="40px"/>
         </TableRow>
 
         <TableRow
@@ -38,7 +38,8 @@
                 android:id="@+id/statsGameTxt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt2" />
+                android:text="@string/statsTableGameTxt2"
+                android:textSize="40px"/>
         </TableRow>
 
         <TableRow
@@ -50,7 +51,8 @@
                 android:id="@+id/statsGameTxt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt3" />
+                android:text="@string/statsTableGameTxt3"
+                android:textSize="40px"/>
         </TableRow>
 
         <TableRow
@@ -62,19 +64,21 @@
                 android:id="@+id/statsGameTxt4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt4" />
+                android:text="@string/statsTableGameTxt4"
+                android:textSize="40px"/>
         </TableRow>
 
         <TableRow
             android:id="@+id/statsRowGame5"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/statsGameTxt5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statsTableGameTxt5" />
+                android:text="@string/statsTableGameTxt5"
+                android:textSize="40px"/>
         </TableRow>
 
     </TableLayout>
@@ -83,14 +87,14 @@
         android:id="@+id/statsInfoTxtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="49dp"
         android:text="@string/statsTableHeaderScore"
-        app:layout_constraintBottom_toTopOf="@+id/statsTableScore"
+        app:layout_constraintBottom_toTopOf="@+id/statsTable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintStart_toEndOf="@+id/statsInfoTxtGame"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/statsInfoTxtGame"
@@ -105,73 +109,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.954" />
 
-    <TableLayout
-        android:id="@+id/statsTableScore"
-        android:layout_width="132dp"
-        android:layout_height="352dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/statsTable"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/statsGameScoreTxt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/statsTableGameScoreTxt1" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/statsGameScoreTxt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/statsTableGameScoreTxt2" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/statsGameScoreTxt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/statsTableGameScoreTxt3" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/statsGameScoreTxt4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/statsTableGameScoreTxt4" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/statsGameScoreTxt5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/statsTableGameScoreTxt5" />
-        </TableRow>
-    </TableLayout>
-
     <Button
         android:id="@+id/statsDeleteBtn"
         android:layout_width="wrap_content"
@@ -183,7 +120,7 @@
         app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/statsTable"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.351"
         tools:ignore="OnClick" />
 
     <TextView
@@ -191,6 +128,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/statsHeader"
+        app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/totalScore"
+        android:layout_width="83dp"
+        android:layout_height="81dp"
+        android:text="@string/totalScore"
+        app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtGame"
+        app:layout_constraintEnd_toStartOf="@+id/totalMaxScore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalMaxScore"
+        android:layout_width="103dp"
+        android:layout_height="97dp"
+        android:text="@string/totalMaxScore"
         app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

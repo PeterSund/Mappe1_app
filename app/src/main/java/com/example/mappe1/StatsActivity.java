@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class StatsActivity extends AppCompatActivity {
@@ -31,18 +33,39 @@ public class StatsActivity extends AppCompatActivity {
     }
 
     public void loadAndSetStats() {
-        //last inn fra shared pref eller array i xml
-        //sett i table
+
+        //Setter siste 10 spill i table
         Set<String> scoreSet = preferences.getStringSet("scores", null);
-        for (String s : scoreSet) {
-            System.out.println(s);
+        int [] textViewList = {R.id.statsGameTxt1, R.id.statsGameTxt2, R.id.statsGameTxt3, R.id.statsGameTxt4, R.id.statsGameTxt5};
+        if(scoreSet != null) {
+            try {
+            int indexInViewList = 0;
+            for (String s : scoreSet) {
+                TextView scoretxt = (TextView) findViewById(textViewList[indexInViewList]);
+                scoretxt.setText(s);
+                indexInViewList++;
+            }
+            } catch (Exception e) {
+                TextView scoretxt = findViewById(R.id.statsGameTxt1);
+                scoretxt.setText(R.string.tableExceptionText);
+            }
         }
 
-    }
+        //Laster inn og setter totale poeng
+        int totalScore = preferences.getInt("totalScore", -1);
+        int totalMaxScore = preferences.getInt("totalMaxScore", -1);
 
+        TextView totalScoreTxt = (TextView) findViewById(R.id.totalScore);
+        TextView totalMaxScoreTxt = (TextView) findViewById(R.id.totalMaxScore);
 
-    public void deleteAllStatistics() {
-        //slett alle statistic og load inn på nytt (kall loadAndSet())
+        if(totalMaxScore != -1 && totalScore != -1) {
+            totalScoreTxt.setText(String.valueOf(totalScore));
+            totalMaxScoreTxt.setText(String.valueOf(totalMaxScore));
+        } else {
+            totalScoreTxt.setText("0");
+            totalMaxScoreTxt.setText("0");
+        }
+
     }
 
     public void confirmDeleteDialog(View view) {
@@ -50,8 +73,9 @@ public class StatsActivity extends AppCompatActivity {
         builder.setTitle(R.string.dialogtekst_stats);
         builder.setPositiveButton(R.string.ja, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                System.out.println("SLETT ALT!!!!");
-                //preferences = getSharedPreferences("Pref", MODE_PRIVATE);
+                preferences.edit().remove("scores").commit();
+                preferences.edit().remove("totalScore").commit();
+                preferences.edit().remove("totalMaxScore").commit();
                 recreate();
                 dialog.dismiss();
             }
@@ -66,3 +90,5 @@ public class StatsActivity extends AppCompatActivity {
     }
 
 }
+
+
