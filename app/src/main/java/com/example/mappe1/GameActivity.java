@@ -39,9 +39,6 @@ public class GameActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPrefs = getSharedPreferences("Answer", MODE_PRIVATE);
-        edit = mPrefs.edit();
-        clearMPrefs();
 
         Intent intent = getIntent();
         intent.getData();
@@ -57,9 +54,6 @@ public class GameActivity extends AppCompatActivity{
         setLocaleLanguage.setLanguage(preferences, res);
 
         setContentView(R.layout.game_activity);
-
-
-
 
         Button btn1 = (Button) findViewById(R.id.button_1);
         Button btn2 = (Button) findViewById(R.id.button_2);
@@ -87,40 +81,31 @@ public class GameActivity extends AppCompatActivity{
         btnNeste.setOnClickListener(this::onClick);
         btnForrige.setOnClickListener(this::onClick);
 
-        fetchQuestionsFromXML(allQuestions);
 
-        alterQuestionsList(gameQuestionsArrayLength);
+        //Henter state hvis det finnes, hvis ikke så starter den et nytt spill
+        if (savedInstanceState != null) {
+            // restore value of members from saved state
+            currentIndex = savedInstanceState.getInt("index");
+            answer = savedInstanceState.getString("answer");
+            gameQuestions = savedInstanceState.getParcelableArrayList("gameQuestions");
+            TextView answers = (TextView) findViewById(R.id.answerView);
+            answers.setText(answer);
+        }
+        else{
+            fetchQuestionsFromXML(allQuestions);
 
+            alterQuestionsList(gameQuestionsArrayLength);
+        }
         TextView spm = (TextView) findViewById(R.id.spmView);
         spm.setText(gameQuestions.get(currentIndex).question);
-
-    }
-
-    private void clearMPrefs(){
-        try {
-            edit.remove("answer");
-            edit.commit();
-        }catch(NullPointerException e){
-            System.out.println(e);
-        }
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        edit.putString("answer", answer);
-        edit.commit();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        answer = mPrefs.getString("answer", answer);
-
-        TextView answers = (TextView) findViewById(R.id.answerView);
-
-        answers.setText(answer);
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("answer", answer);
+        outState.putInt("index", currentIndex);
+        outState.putParcelableArrayList("gameQuestions", gameQuestions);
     }
 
     public void onClick(View view) {
