@@ -5,14 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,16 +30,21 @@ public class GameActivity extends AppCompatActivity{
     private ArrayList<Question> allQuestions = new ArrayList<>();
 
     private SharedPreferences preferences;
+    public SharedPreferences mPrefs;
     private SharedPreferences.Editor preferences_editor;
+    public SharedPreferences.Editor edit;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mPrefs = getSharedPreferences("Answer", MODE_PRIVATE);
+        edit = mPrefs.edit();
+        clearMPrefs();
+
         Intent intent = getIntent();
         intent.getData();
-
 
         //Setter antall spørsmål i spillet fra verdi i SharedPref
         preferences = getSharedPreferences("Pref", MODE_PRIVATE);
@@ -91,6 +94,33 @@ public class GameActivity extends AppCompatActivity{
         TextView spm = (TextView) findViewById(R.id.spmView);
         spm.setText(gameQuestions.get(currentIndex).question);
 
+    }
+
+    private void clearMPrefs(){
+        try {
+            edit.remove("answer");
+            edit.commit();
+        }catch(NullPointerException e){
+            System.out.println(e);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        edit.putString("answer", answer);
+        edit.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        answer = mPrefs.getString("answer", answer);
+
+        TextView answers = (TextView) findViewById(R.id.answerView);
+
+        answers.setText(answer);
     }
 
     public void onClick(View view) {
@@ -157,8 +187,11 @@ public class GameActivity extends AppCompatActivity{
 
             case R.id.button_forrige:
                 try {
-                    spm.setText(gameQuestions.get(currentIndex - 1).question);
-                    currentIndex--;
+                    if (answers.getText() == null) {
+                        break;
+                    }
+                    answer = backspace(answer);
+                    answers.setText(answer);
                 }
                 catch (Exception e){
                     System.out.println(e);
@@ -174,6 +207,15 @@ public class GameActivity extends AppCompatActivity{
         System.out.println("A:" + correctAnswer);
         System.out.println("Test:" + answer);
         gameQuestions.get(curIndex).setAnsweredCorrect(answer.equals(correctAnswer));
+    }
+
+    public String backspace(String text){
+        StringBuilder ret = new StringBuilder();
+        String[] q = text.split("");
+        for(int i = 0; i<q.length-1; i++){
+            ret.append(q[i]);
+        }
+        return ret.toString();
     }
 
     public void alterQuestionsList(int gameQuestionsArrayLength) {
