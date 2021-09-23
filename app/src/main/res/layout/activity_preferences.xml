@@ -2,6 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#8CC5BF"
+    android:fontFamily="casual"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PrefActivity">
@@ -21,6 +23,7 @@
             android:id="@+id/velg5spm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="#0C0B0B"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:onClick="onClickedAntallSpm"
@@ -35,6 +38,7 @@
             android:id="@+id/velg10spm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="#0C0B0B"
             android:minHeight="48dp"
             android:onClick="onClickedAntallSpm"
             android:text="@string/velg10spm"
@@ -48,6 +52,7 @@
             android:id="@+id/velg15spm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:buttonTint="#0C0B0B"
             android:minHeight="48dp"
             android:onClick="onClickedAntallSpm"
             android:text="@string/velg15spm"
@@ -67,10 +72,9 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.078" />
 
     <TextView
         android:id="@+id/textView5"
@@ -95,5 +99,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.074"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="103dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/velgAntallSpm"
+        app:layout_constraintTop_toBottomOf="@+id/velgAntallSpm"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/dino_pref" />
 
 </android.support.constraint.ConstraintLayout>
