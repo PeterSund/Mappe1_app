@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
 
@@ -263,13 +264,19 @@ public class GameActivity extends AppCompatActivity{
     private void saveScoreToSharedPreferences() {
         preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
         Set<String> scores = preferences.getStringSet("scores", null );
+        String localeLang = preferences.getString("localeLang", "en");
+
+
+        String pattern = "EEEE dd. MMM";
+        SimpleDateFormat simpleDateFormat =
+                new SimpleDateFormat(pattern, new Locale(localeLang));
 
         // Kjøres første gang man lagrer score da settet ikke finnes i sharedpreferences
         if (scores == null) {
             Set<String> scores1 = new HashSet<>();
             String scoreForSaving = "";
-            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new Date());
-            scoreForSaving += "Game " + timeStamp;
+            String timeStamp = simpleDateFormat.format(new Date());
+            scoreForSaving += timeStamp;
             String scoreCount = String.valueOf(correctAnswersCount());
             String maxScoreCount = String.valueOf(gameQuestions.size());
             scoreForSaving += "       " + scoreCount + "/" + maxScoreCount;
@@ -278,8 +285,9 @@ public class GameActivity extends AppCompatActivity{
             preferences_editor.apply();
         } else {
             String scoreForSaving = "";
-            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new Date());
-            scoreForSaving += "Game " + timeStamp;
+
+            String timeStamp = simpleDateFormat.format(new Date());
+            scoreForSaving += timeStamp;
             String scoreCount = String.valueOf(correctAnswersCount());
             String maxScoreCount = String.valueOf(gameQuestions.size());
             scoreForSaving += "       " + scoreCount + "/" + maxScoreCount;

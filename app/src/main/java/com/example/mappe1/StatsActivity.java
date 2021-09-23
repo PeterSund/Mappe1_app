@@ -34,7 +34,7 @@ public class StatsActivity extends AppCompatActivity {
 
     public void loadAndSetStats() {
 
-        //Setter siste 10 spill i table
+        //Setter siste 5 spill i table
         Set<String> scoreSet = preferences.getStringSet("scores", null);
         int [] textViewList = {R.id.statsGameTxt1, R.id.statsGameTxt2, R.id.statsGameTxt3, R.id.statsGameTxt4, R.id.statsGameTxt5};
         if(scoreSet != null) {
@@ -46,8 +46,6 @@ public class StatsActivity extends AppCompatActivity {
                 indexInViewList++;
             }
             } catch (Exception e) {
-                TextView scoretxt = findViewById(R.id.statsGameTxt1);
-                scoretxt.setText(R.string.tableExceptionText);
             }
         }
 
