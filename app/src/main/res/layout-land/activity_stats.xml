@@ -91,8 +91,9 @@
         android:layout_width="126dp"
         android:layout_height="32dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/chewy"
         android:text="@string/statsTableHeaderGame"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/statsTable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.656"
@@ -104,6 +105,7 @@
         android:id="@+id/statsDeleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#F16C6C"
         android:onClick="confirmDeleteDialog"
         android:text="@string/statsBtnTxt"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,15 +120,16 @@
         android:id="@+id/statsHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/chewy"
         android:text="@string/statsHeader"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.484" />
 
     <TextView
         android:id="@+id/totalScore"
@@ -146,8 +149,9 @@
         android:id="@+id/statsInfoTxtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/chewy"
         android:text="@string/statsTableHeaderScore"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/totalScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
@@ -176,15 +180,15 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="108dp"
-        android:layout_height="89dp"
+        android:layout_width="99dp"
+        android:layout_height="86dp"
         android:layout_marginStart="12dp"
         app:layout_constraintBottom_toTopOf="@+id/statsTable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toEndOf="@+id/statsInfoTxtGame"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592"
-        app:srcCompat="@drawable/stats_dino256" />
+        app:layout_constraintVertical_bias="0.733"
+        app:srcCompat="@drawable/stats_dino" />
 
 </android.support.constraint.ConstraintLayout>

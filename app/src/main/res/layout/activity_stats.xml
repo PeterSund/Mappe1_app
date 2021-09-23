@@ -89,11 +89,12 @@
         android:id="@+id/statsInfoTxtScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/chewy"
         android:text="@string/statsTableHeaderScore"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/totalScore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -103,8 +104,9 @@
         android:layout_width="126dp"
         android:layout_height="32dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/chewy"
         android:text="@string/statsTableHeaderGame"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/statsTable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.185"
@@ -116,6 +118,7 @@
         android:id="@+id/statsDeleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#F16C6C"
         android:onClick="confirmDeleteDialog"
         android:text="@string/statsBtnTxt"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,17 +131,17 @@
 
     <TextView
         android:id="@+id/statsHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:fontFamily="@font/chewy"
         android:text="@string/statsHeader"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
+        app:layout_constraintBottom_toTopOf="@+id/totalScore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <TextView
         android:id="@+id/totalScore"
@@ -175,15 +178,15 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="82dp"
-        android:layout_height="87dp"
+        android:layout_width="66dp"
+        android:layout_height="72dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/totalScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/group"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235"
-        app:srcCompat="@drawable/stats_dino256" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/stats_dino" />
 
 </android.support.constraint.ConstraintLayout>
