@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -43,7 +44,6 @@ public class PrefActivity extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.spinnerVelgSpråk);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.språk, android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
 
         //Må settes i post.Runnable for å unngå at listner kjører igjen når siden lastes på nytt ved endring av språk
         spinner.post(new Runnable() {
