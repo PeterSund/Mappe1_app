@@ -85,6 +85,7 @@ public class PrefActivity extends AppCompatActivity {
         builder.setTitle(R.string.dialogtekst);
         builder.setPositiveButton(R.string.ja, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                //Lagrer og setter språk hvis bruker bekrefter endring
                 preferences_editor.putString("localeLang", lang);
                 preferences_editor.apply();
                 preferences = getSharedPreferences("Pref", MODE_PRIVATE);
@@ -103,7 +104,7 @@ public class PrefActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    //Setter antall spørmål i spillet (lengde på array), lagres i SharedPref
+    //Setter antall spørmål i spillet (lengde på array), lagres i SharedPref.
     public void onClickedAntallSpm(View view) {
         boolean clicked = ((RadioButton) view).isChecked();
 

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Sett språk fra SharedPreferences
+        //Setter språk fra SharedPreferences
         preferences = getSharedPreferences("Pref", MODE_PRIVATE);
         Resources res = getResources();
         setLocaleLanguage.setLanguage(preferences, res);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //Sett språk fra SharedPreferences når aktivten startes igjen (f. eks navigere tilbake)
+        //Setter språk fra SharedPreferences når aktivten startes igjen (f. eks navigere tilbake)
         preferences = getSharedPreferences("Pref", MODE_PRIVATE);
         Resources res = getResources();
         setLocaleLanguage.setLanguage(preferences, res);
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    //OnClick for knapper i meny, navigerer til ønsket aktivtet
+    //OnClick for knapper i meny, navigerer til ønsket aktivtet med intent. MainActivity er satt som parent for alle i manifest
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnStartGame:

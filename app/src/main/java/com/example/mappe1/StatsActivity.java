@@ -63,6 +63,7 @@ public class StatsActivity extends AppCompatActivity {
 
     }
 
+    //Lager dialog for sletting av statisikk. De relevante feltene tømmes fra shared pref hvis bruker bekrefter
     public void confirmDeleteDialog(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.dialogtekst_stats);

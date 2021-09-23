@@ -11,6 +11,8 @@ import java.util.Locale;
 
 public class SetLocaleLanguage extends AppCompatActivity {
 
+    //Generell metode for å sette språk, lagt i egen klasse da den kalles på mange ganger
+    //Henter ut "språkkode" fra shared pref og setter nytt språk
     public void setLanguage(SharedPreferences preferences, Resources res) {
         String lang = preferences.getString("localeLang", "en");
         DisplayMetrics dm = res.getDisplayMetrics();

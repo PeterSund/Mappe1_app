@@ -259,12 +259,13 @@ public class GameActivity extends AppCompatActivity{
         dialog.show();
     }
 
+    //Henter ut String set for lagring av poeng, kjøres når spillet er ferdig
     private void saveScoreToSharedPreferences() {
         preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
         Set<String> scores = preferences.getStringSet("scores", null );
         String localeLang = preferences.getString("localeLang", "en");
 
-
+        //Bygger timestamp for lagring av spillstatistikk, lagrer med format for valgt språk. F. eks Søn for søndag hvis norsk er valgt
         String pattern = "EEEE dd. MMM";
         SimpleDateFormat simpleDateFormat =
                 new SimpleDateFormat(pattern, new Locale(localeLang));
@@ -283,7 +284,6 @@ public class GameActivity extends AppCompatActivity{
             preferences_editor.apply();
         } else {
             String scoreForSaving = "";
-
             String timeStamp = simpleDateFormat.format(new Date());
             scoreForSaving += timeStamp;
             String scoreCount = String.valueOf(correctAnswersCount());
@@ -317,8 +317,6 @@ public class GameActivity extends AppCompatActivity{
             preferences_editor.putInt("totalMaxScore", totalMaxScore);
             preferences_editor.apply();
         }
-
-
     }
 
     private int correctAnswersCount(){
