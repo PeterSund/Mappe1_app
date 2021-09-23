@@ -272,7 +272,7 @@ public class GameActivity extends AppCompatActivity{
 
 
     //Metode som lagrer scoren i SharedPreferances slik at scoren kan vises på statistikk siden
-    //Henter ut String set for lagring av poeng, kjøres når spillet er ferdig
+    //Henter ut String set for lagring av poeng, kjøres når spillet er ferdig4
     private void saveScoreToSharedPreferences() {
         preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
         Set<String> scores = preferences.getStringSet("scores", null );
