@@ -39,11 +39,7 @@ public class GameActivity extends AppCompatActivity{
     private ArrayList<Question> allQuestions = new ArrayList<>();
 
     private SharedPreferences preferences;
-    public SharedPreferences mPrefs;
     private SharedPreferences.Editor preferences_editor;
-    public SharedPreferences.Editor edit;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +58,10 @@ public class GameActivity extends AppCompatActivity{
         SetLocaleLanguage setLocaleLanguage = new SetLocaleLanguage();
         setLocaleLanguage.setLanguage(preferences, res);
 
+        //Setter layout til game_activity.xml
         setContentView(R.layout.game_activity);
 
+        //instansierer knapper
         Button btn1 = (Button) findViewById(R.id.button_1);
         Button btn2 = (Button) findViewById(R.id.button_2);
         Button btn3 = (Button) findViewById(R.id.button_3);
@@ -75,8 +73,10 @@ public class GameActivity extends AppCompatActivity{
         Button btn9 = (Button) findViewById(R.id.button_9);
         Button btn0 = (Button) findViewById(R.id.button_0);
         Button btnNeste = (Button) findViewById(R.id.button_neste);
-        Button btnForrige = (Button) findViewById(R.id.button_forrige);
+        Button btnForrige = (Button) findViewById(R.id.button_backspace);
 
+
+        //instansierer onClick-funksjoner til knappene
         btn1.setOnClickListener(this::onClick);
         btn2.setOnClickListener(this::onClick);
         btn3.setOnClickListener(this::onClick);
@@ -115,6 +115,7 @@ public class GameActivity extends AppCompatActivity{
         count.setText(countQuestion);
     }
 
+    //Lagrer state slik at dataene endres hvis feks orientation endres eller man går inn og ut av appen
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -124,6 +125,7 @@ public class GameActivity extends AppCompatActivity{
         outState.putString("countQuestions", countQuestion);
     }
 
+    //Metode som håndterer hva som skjer når man trykker på de forskjellige knappene i game_activity
     public void onClick(View view) {
         TextView answers = (TextView) findViewById(R.id.answerView);
         TextView spm = (TextView) findViewById(R.id.spmView);
@@ -190,7 +192,7 @@ public class GameActivity extends AppCompatActivity{
                 }
                 break;
 
-            case R.id.button_forrige:
+            case R.id.button_backspace:
                 try {
                     if (answers.getText() == null) {
                         break;
@@ -207,6 +209,8 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
+    //Metode som sjekker om svaret man har skrevet er korrekt og hvis det er det setter den
+    //boolean i Question-objektet til å være true
     public void checkAnswer(int curIndex, String answer){
         String correctAnswer = gameQuestions.get(curIndex).correctAnswer;
         System.out.println("A:" + correctAnswer);
@@ -214,6 +218,7 @@ public class GameActivity extends AppCompatActivity{
         gameQuestions.get(curIndex).setAnsweredCorrect(answer.equals(correctAnswer));
     }
 
+    //Metode for å håndtere sletting av siste char i en string
     public String backspace(String text){
         StringBuilder ret = new StringBuilder();
         String[] q = text.split("");
@@ -223,6 +228,9 @@ public class GameActivity extends AppCompatActivity{
         return ret.toString();
     }
 
+    //Metode for å håndtere spørsmålene i spillet
+    //Sørger for at ingen spørsmål kommer flere ganger og at de kommer i en tilfeldig rekkefølge
+    //allQuestions inneholder alle spørsmål og gameQuestions er arrayet som blir brukt i spillet
     public void alterQuestionsList(int gameQuestionsArrayLength) {
         Random r = new Random();
         int j = allQuestions.size();
@@ -234,6 +242,7 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
+    //Metode som henter spørsmål fra sporsmal.xml og legger alle inn i arrayet allQuestions
     public void fetchQuestionsFromXML(ArrayList<Question> allQuestions) {
         List<String> qs = Arrays.asList(getResources().getStringArray(R.array.questions));
         for (int i = 0; i < qs.size(); i++){
@@ -246,10 +255,12 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
+    //Metode som bygger og hånderer dialogboksen når man har svart på det siste spørsmålet i spillet
     private void confirmEndGameDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.dialogtekst_score) + " " + correctAnswersCount() +"/"+ gameQuestions.size());
         builder.setPositiveButton("OK!", new DialogInterface.OnClickListener() {
+            //Metode som håndterer hva som skjer når man trykker på knappen i dialog-boksen
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
                 finish();
@@ -259,6 +270,8 @@ public class GameActivity extends AppCompatActivity{
         dialog.show();
     }
 
+
+    //Metode som lagrer scoren i SharedPreferances slik at scoren kan vises på statistikk siden
     //Henter ut String set for lagring av poeng, kjøres når spillet er ferdig
     private void saveScoreToSharedPreferences() {
         preferences_editor = getSharedPreferences("Pref", MODE_PRIVATE).edit();
@@ -319,6 +332,7 @@ public class GameActivity extends AppCompatActivity{
         }
     }
 
+    //Metode som teller antall riktige svar og returnerer denne verdien
     private int correctAnswersCount(){
         int c = 0;
         for (int i = 0; i < gameQuestions.size(); i++) {

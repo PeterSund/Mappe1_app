@@ -104,7 +104,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button_forrige"
+                android:id="@+id/button_backspace"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:background="@android:color/transparent"
@@ -138,8 +138,8 @@
         android:layout_width="86dp"
         android:layout_height="44dp"
         android:layout_marginTop="16dp"
+        android:gravity="center|end"
         android:textSize="30sp"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
@@ -149,9 +149,11 @@
 
     <TextView
         android:id="@+id/svar"
-        android:layout_width="178dp"
-        android:layout_height="22dp"
+        android:layout_width="184dp"
+        android:layout_height="27dp"
         android:fontFamily="casual"
+        android:gravity="center|end"
+        android:paddingEnd="6px"
         android:text="@string/svar"
         android:textSize="20sp"
         android:textStyle="bold|italic"
@@ -164,7 +166,7 @@
 
     <TextView
         android:id="@+id/answerView"
-        android:layout_width="115dp"
+        android:layout_width="110dp"
         android:layout_height="24dp"
         android:text="@string/game_answer"
         android:textSize="27sp"

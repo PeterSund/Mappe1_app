@@ -105,7 +105,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/button_forrige"
+                android:id="@+id/button_backspace"
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:background="@android:color/transparent"
