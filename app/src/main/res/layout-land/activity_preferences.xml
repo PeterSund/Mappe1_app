@@ -111,6 +111,6 @@
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/spinnerVelgSpråk"
         app:layout_constraintVertical_bias="0.418"
-        app:srcCompat="@drawable/dino_pref128" />
+        app:srcCompat="@drawable/dino_pref256" />
 
 </android.support.constraint.ConstraintLayout>

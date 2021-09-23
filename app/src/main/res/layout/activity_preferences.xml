@@ -110,6 +110,6 @@
         app:layout_constraintStart_toEndOf="@+id/velgAntallSpm"
         app:layout_constraintTop_toBottomOf="@+id/velgAntallSpm"
         app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/dino_pref" />
+        app:srcCompat="@drawable/dino_pref256" />
 
 </android.support.constraint.ConstraintLayout>

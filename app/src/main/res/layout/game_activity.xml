@@ -166,8 +166,8 @@
 
     <TextView
         android:id="@+id/answerView"
-        android:layout_width="110dp"
-        android:layout_height="24dp"
+        android:layout_width="108dp"
+        android:layout_height="32dp"
         android:text="@string/game_answer"
         android:textSize="27sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
