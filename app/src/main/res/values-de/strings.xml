@@ -2,8 +2,8 @@
     tools:ignore="Typos">
     //Menu
     <string name="app_name">Mappe1</string>
-    <string name="game_neste">Neste</string>
-    <string name="game_forrige">Forrige</string>
+    <string name="game_neste"> </string>
+    <string name="game_forrige"> </string>
     <string name="dino_spm">Was ist</string>
     <string name="game_1">1</string>
     <string name="game_2">2</string>
@@ -16,42 +16,43 @@
     <string name="game_9">9</string>
     <string name="game_0">0</string>
     <string name="svar">Meine Antwort ist: </string>
-    <string name="menyStats">LOOOOL</string>
-    <string name="menyStart">HEEEEI</string>
-    <string name="menyPref">tysk jo</string>
+    <string name="menyStats">Statistiken</string>
+    <string name="menyStart">Spiel</string>
+    <string name="menyPref"> </string>
+    <string name="dialogtekst_score">Sehr gut! Du hast: </string>
+    <string name="game_answer"> </string>
+    <string name="menyLogo">Mathe-Spiele</string>
 
     //Preferences
-    <string name="velg5spm">GERMAN!!!!</string>
-    <string name="velg10spm">GERMAN!!!!</string>
-    <string name="velg15spm">GERMAN!!!!l</string>
-    <string name="velgAntallSpmTekst">GERMAN!!!!</string>
-    <string name="velgSpråkTekst">GERMAN!!!!</string>
+    <string name="velg5spm">5 Fragen</string>
+    <string name="velg10spm">10 Fragen</string>
+    <string name="velg15spm">15 Fragen</string>
+    <string name="velgAntallSpmTekst">Anzahl der Fragen:</string>
+    <string name="velgSpråkTekst">Sprache auswählen:</string>
 
     //Stats
-    <string name="statsHeader">Statistikk</string>
-    <string name="statsTableHeaderGame">Spill</string>
-    <string name="statsTableHeaderScore">Poeng</string>
+    <string name="statsHeader">Statistiken</string>
+    <string name="statsTableHeaderGame">Spiel</string>
+    <string name="statsTableHeaderScore">Punkt</string>
 
-    <string name="statsTableGameTxt1"></string>
-    <string name="statsTableGameTxt2"></string>
-    <string name="statsTableGameTxt3"></string>
-    <string name="statsTableGameTxt4"></string>
-    <string name="statsTableGameTxt5"></string>
-    <string name="statsTableGameTxt6"></string>
-    <string name="statsTableGameTxt7"></string>
-    <string name="statsTableGameTxt8"></string>
-    <string name="statsTableGameTxt9"></string>
-    <string name="statsTableGameTxt10"></string>
+    <string name="statsTableGameTxt1"> </string>
+    <string name="statsTableGameTxt2"> </string>
+    <string name="statsTableGameTxt3"> </string>
+    <string name="statsTableGameTxt4"> </string>
+    <string name="statsTableGameTxt5"> </string>
+    <string name="statsTableGameTxt6"> </string>
+    <string name="statsTableGameTxt7"> </string>
+    <string name="statsTableGameTxt8"> </string>
+    <string name="statsTableGameTxt9"> </string>
+    <string name="statsTableGameTxt10"> </string>
 
-    <string name="totalScore"></string>
+    <string name="totalScore"> </string>
     <string name="scoreDivider">/</string>
-    <string name="totalMaxScore"></string>
-
-    <string name="tableExceptionText">Kunne ikke laste inn statistikk></string>
+    <string name="totalMaxScore"> </string>
 
 
-    <string name="statsBtnTxt">Slett alle statistikk</string>
-    <string name="dialogtekst_stats">Er du sikker på at du vil slette all statisikk?</string>
+    <string name="statsBtnTxt">Alle Statistiken löschen</string>
+    <string name="dialogtekst_stats">Sind Sie sicher, dass Sie alle Statistiken löschen möchten?</string>
 
     //Dialog language
     <string name="dialogtekst">Möchten Sie die Sprache wirklich auf Norwegisch ändern?</string>
