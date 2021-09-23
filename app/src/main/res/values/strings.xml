@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="Typos">
     //GameActivity
-    <string name="app_name">Mappe1</string>
+    <string name="app_name">MatteSpill</string>
     <string name="game_neste"> </string>
     <string name="game_forrige"> </string>
     <string name="dino_spm">Hva er</string>
