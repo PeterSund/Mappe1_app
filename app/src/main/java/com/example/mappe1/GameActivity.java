@@ -1,8 +1,6 @@
 /*
-Fikse ikke gjenbruk av spørsmål - mats
 Implementere preferanser som fragments - tar oss mellom 30 min - 30 timer - peter
 Design av preferanser og meny - felles
-Lage flere/bedre spørsmål - mats
 Legge inn tysk i string XML - peter
 TESTE - felles
 RAPPORT - felles
@@ -228,13 +226,12 @@ public class GameActivity extends AppCompatActivity{
 
     public void alterQuestionsList(int gameQuestionsArrayLength) {
         Random r = new Random();
+        int j = allQuestions.size();
         for(int i=0; i < gameQuestionsArrayLength; i++) {
-            int qnr = r.nextInt(15 - 1) + 1;
+            int qnr = r.nextInt(j);
+            j--;
             gameQuestions.add(allQuestions.get(qnr));
-
-            //FJERNE BRUKTE SPØRSMÅL!!!
-
-
+            allQuestions.remove(qnr);
         }
     }
 
