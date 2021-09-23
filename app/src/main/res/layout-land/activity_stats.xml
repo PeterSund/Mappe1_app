@@ -160,12 +160,12 @@
         android:layout_width="54dp"
         android:layout_height="46dp"
         android:layout_marginTop="104dp"
-        app:layout_constraintBottom_toBottomOf="@+id/totalScore"
-        app:layout_constraintEnd_toStartOf="@+id/statsTable"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/totalScore"
+        app:layout_constraintBottom_toTopOf="@+id/statsDeleteBtn"
+        app:layout_constraintEnd_toEndOf="@+id/statsTable"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="@+id/totalScore"
         app:layout_constraintTop_toBottomOf="@+id/statsHeader"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.224"
         app:srcCompat="@drawable/medal_stats" />
 
     <android.support.constraint.Group
