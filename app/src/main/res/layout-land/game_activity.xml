@@ -10,14 +10,14 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="262dp"
-        android:layout_height="319dp"
+        android:layout_width="260dp"
+        android:layout_height="295dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.98">
 
         <TableRow
             android:layout_width="match_parent"
@@ -26,21 +26,21 @@
             <Button
                 android:id="@+id/button_1"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_1"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_2"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_2"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_3"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_3"
                 android:textSize="25sp" />
 
@@ -53,21 +53,21 @@
             <Button
                 android:id="@+id/button_4"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_4"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_5"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_5"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_6"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_6"
                 android:textSize="25sp" />
 
@@ -80,21 +80,21 @@
             <Button
                 android:id="@+id/button_7"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_7"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_8"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_8"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/button_9"
                 android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_height="75dp"
                 android:text="@string/game_9"
                 android:textSize="25sp" />
 
@@ -109,10 +109,9 @@
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:background="@android:color/transparent"
-                android:drawableStart="@drawable/backspace"
+                android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="@string/game_forrige"
                 android:textSize="25sp" />
 
             <Button
@@ -127,10 +126,9 @@
                 android:layout_width="88dp"
                 android:layout_height="68dp"
                 android:background="@android:color/transparent"
-                android:drawableEnd="@drawable/checked"
+                android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="@string/game_neste"
                 android:textSize="25sp" />
 
         </TableRow>
@@ -138,22 +136,24 @@
 
     <TextView
         android:id="@+id/spmView"
-        android:layout_width="86dp"
-        android:layout_height="44dp"
+        android:layout_width="85dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:gravity="center|end"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <TextView
         android:id="@+id/svar"
-        android:layout_width="192dp"
-        android:layout_height="34dp"
+        android:layout_width="247dp"
+        android:layout_height="39dp"
         android:fontFamily="casual"
+        android:gravity="center"
         android:text="@string/svar"
         android:textSize="25sp"
         android:textStyle="bold|italic"
@@ -167,13 +167,14 @@
         android:id="@+id/answerView"
         android:layout_width="160dp"
         android:layout_height="57dp"
+        android:gravity="center"
         android:text="@string/game_answer"
-        android:textSize="27sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/svar"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -184,13 +185,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998"
+        app:layout_constraintVertical_bias="0.06999999"
         app:srcCompat="@drawable/drawing" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="156dp"
-        android:layout_height="46dp"
+        android:layout_width="135dp"
+        android:layout_height="38dp"
         android:layout_marginStart="122dp"
         android:fontFamily="casual"
         android:text="@string/dino_spm"
@@ -198,9 +199,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/spmView"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
 
     <TextView
         android:id="@+id/textView2"
@@ -208,10 +210,12 @@
         android:layout_height="42dp"
         android:text="@string/question_mark"
         android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tableLayout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/spmView"
-        tools:layout_editor_absoluteY="82dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
 
     <TextView
         android:id="@+id/questionCount"
@@ -223,5 +227,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        app:srcCompat="@drawable/backspace" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="63dp"
+        android:layout_height="54dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        app:srcCompat="@drawable/checked" />
 
 </android.support.constraint.ConstraintLayout>

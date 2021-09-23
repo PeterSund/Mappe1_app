@@ -2,8 +2,8 @@
     tools:ignore="Typos">
     //GameActivity
     <string name="app_name">Mappe1</string>
-    <string name="game_neste"></string>
-    <string name="game_forrige"></string>
+    <string name="game_neste"> </string>
+    <string name="game_forrige"> </string>
     <string name="dino_spm">Hva er</string>
     <string name="question_mark" translatable="false">?</string>
     <string name="game_1">1</string>
@@ -24,6 +24,8 @@
     <string name="menyStats">Statistikk</string>
     <string name="menyStart">Spill</string>
     <string name="menyPref">Preferanser</string>
+    <string name="menyLogo">Mattespill</string>
+
 
     //Preferences
     <string name="velg5spm">5 spørsmål</string>
@@ -37,24 +39,20 @@
     <string name="statsTableHeaderGame">Siste spill:</string>
     <string name="statsTableHeaderScore">Poeng totalt:</string>
 
-    <string name="statsTableGameTxt1"></string>
-    <string name="statsTableGameTxt2"></string>
-    <string name="statsTableGameTxt3"></string>
-    <string name="statsTableGameTxt4"></string>
-    <string name="statsTableGameTxt5"></string>
-    <string name="statsTableGameTxt6"></string>
-    <string name="statsTableGameTxt7"></string>
-    <string name="statsTableGameTxt8"></string>
-    <string name="statsTableGameTxt9"></string>
-    <string name="statsTableGameTxt10"></string>
+    <string name="statsTableGameTxt1"> </string>
+    <string name="statsTableGameTxt2"> </string>
+    <string name="statsTableGameTxt3"> </string>
+    <string name="statsTableGameTxt4"> </string>
+    <string name="statsTableGameTxt5"> </string>
+    <string name="statsTableGameTxt6"> </string>
+    <string name="statsTableGameTxt7"> </string>
+    <string name="statsTableGameTxt8"> </string>
+    <string name="statsTableGameTxt9"> </string>
+    <string name="statsTableGameTxt10"> </string>
 
-    <string name="totalScore"></string>
+    <string name="totalScore"> </string>
     <string name="scoreDivider">/</string>
-    <string name="totalMaxScore"></string>
-
-
-    <string name="tableExceptionText">Kunne ikke laste inn statistikk></string>
-
+    <string name="totalMaxScore"> </string>
 
     <string name="statsBtnTxt">Slett all statistikk</string>
     <string name="dialogtekst_stats">Er du sikker på at du vil slette all statisikk?</string>

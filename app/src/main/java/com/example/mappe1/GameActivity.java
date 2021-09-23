@@ -1,6 +1,4 @@
 /*
-Implementere preferanser som fragments - tar oss mellom 30 min - 30 timer - peter
-Design av preferanser og meny - felles
 Legge inn tysk i string XML - peter
 TESTE - felles
 RAPPORT - felles
