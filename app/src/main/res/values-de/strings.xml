@@ -55,7 +55,7 @@
     <string name="dialogtekst_stats">Sind Sie sicher, dass Sie alle Statistiken löschen möchten?</string>
 
     //Dialog language
-    <string name="dialogtekst">Möchten Sie die Sprache wirklich auf Norwegisch ändern?</string>
+    <string name="dialogtekst">Möchten Sie zu Norwegisch wechseln?</string>
     <string name="ja">Ok</string>
     <string name="nei">Abbrechen</string>
 
