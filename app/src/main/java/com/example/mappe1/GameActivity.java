@@ -245,8 +245,6 @@ public class GameActivity extends AppCompatActivity{
     //boolean i Question-objektet til å være true
     public void checkAnswer(int curIndex, String answer){
         String correctAnswer = gameQuestions.get(curIndex).correctAnswer;
-        System.out.println("A:" + correctAnswer);
-        System.out.println("Test:" + answer);
         gameQuestions.get(curIndex).setAnsweredCorrect(answer.equals(correctAnswer));
     }
 
@@ -309,9 +307,6 @@ public class GameActivity extends AppCompatActivity{
             String [] a = qs.get(i).split(",");
             Question b = new Question(a[1], a[0], false);
             allQuestions.add(b);
-        }
-        for (int i = 0; i < allQuestions.size(); i++){
-            System.out.println(allQuestions.get(i).toString());
         }
     }
 
