@@ -33,6 +33,7 @@ public class GameActivity extends AppCompatActivity{
     private String answer = "";
     private int currentIndex = 0;
     private String countQuestion = "";
+    private String correctAns = "";
 
     //ARRAYS SKAL LIGGER I XML I FØLGE OPPGAVETEKST. Create from resources kan brukes tror jeg. createFromResource(), se prefAct linje 44
     private ArrayList<Question> gameQuestions = new ArrayList<>();
@@ -109,6 +110,11 @@ public class GameActivity extends AppCompatActivity{
 
             countQuestion = (currentIndex+1) + "/" + (gameQuestions.size());
         }
+
+        correctAns = getString(R.string.correct) + " " + correctAnswersCount();
+        TextView corAns = (TextView) findViewById(R.id.correctAnswers);
+        corAns.setText(correctAns);
+
         TextView spm = (TextView) findViewById(R.id.spmView);
         spm.setText(gameQuestions.get(currentIndex).question);
 
@@ -131,6 +137,8 @@ public class GameActivity extends AppCompatActivity{
         TextView answers = (TextView) findViewById(R.id.answerView);
         TextView spm = (TextView) findViewById(R.id.spmView);
         TextView count = (TextView) findViewById(R.id.questionCount);
+        TextView correct = (TextView) findViewById(R.id.correctAnswers);
+
         switch (view.getId()){
             case R.id.button_0:
                 answer += "0";
@@ -181,14 +189,14 @@ public class GameActivity extends AppCompatActivity{
                     confirmEndGameDialog();
                 }
                 else {
-                    System.out.println(a);
-                    System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
                     checkAnswer(currentIndex, a);
-                    System.out.println(gameQuestions.get(currentIndex).answeredCorrect);
                     answer = "";
                     answers.setText(answer);
                     spm.setText(gameQuestions.get(currentIndex + 1).question);
                     currentIndex++;
+                    int rightAnswers = correctAnswersCount();
+                    correctAns = getText(R.string.correct) + " " + rightAnswers;
+                    correct.setText(correctAns);
                     count.setText(countQuestion);
                 }
                 break;

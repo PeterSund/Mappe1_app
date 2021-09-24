@@ -19,6 +19,7 @@
     <string name="game_answer"> </string>
     <string name="svar">Mitt svar er: </string>
     <string name="dialogtekst_score">Kjempe bra! Du klarte: </string>
+    <string name="correct">Riktige:</string>
 
     //Menu
     <string name="menyStats">Statistikk</string>

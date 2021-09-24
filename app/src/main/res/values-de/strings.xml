@@ -22,6 +22,7 @@
     <string name="dialogtekst_score">Sehr gut! Du hast: </string>
     <string name="game_answer"> </string>
     <string name="menyLogo">Mathe-Spiele</string>
+    <string name="correct">Korrekt:</string>
 
     //Preferences
     <string name="velg5spm">5 Fragen</string>
