@@ -29,12 +29,12 @@
             android:minHeight="48dp"
             android:onClick="onClickedAntallSpm"
             android:text="@string/velg5spm"
-            android:textColor="#AB070707"
             android:textSize="18sp"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="48dp"
             tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="176dp" />
+            tools:layout_editor_absoluteY="176dp"
+            tools:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/velg10spm"
@@ -45,7 +45,7 @@
             android:minHeight="48dp"
             android:onClick="onClickedAntallSpm"
             android:text="@string/velg10spm"
-            android:textColor="#AB070707"
+            android:textColor="#000000"
             android:textSize="18sp"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="48dp"
@@ -61,7 +61,7 @@
             android:minHeight="48dp"
             android:onClick="onClickedAntallSpm"
             android:text="@string/velg15spm"
-            android:textColor="#AB070707"
+            android:textColor="#000000"
             android:textSize="18sp"
             tools:layout_conversion_absoluteHeight="48dp"
             tools:layout_conversion_absoluteWidth="48dp"
@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/chewy"
         android:text="@string/velgAntallSpmTekst"
+        android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +91,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/chewy"
         android:text="@string/velgSpråkTekst"
+        android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

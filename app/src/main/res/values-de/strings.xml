@@ -56,7 +56,10 @@
 
     //Dialog language
     <string name="dialogtekst">Möchten Sie zu Norwegisch wechseln?</string>
-    <string name="ja">Ok</string>
-    <string name="nei">Abbrechen</string>
+    <string name="ja">Ja</string>
+    <string name="nei">Nein</string>
+    <string name="backpop">Willst du wirklich aufhören?</string>
+    <string name="duHar"> Noch </string>
+    <string name="spmIgjen"> Fragen!</string>
 
 </resources>

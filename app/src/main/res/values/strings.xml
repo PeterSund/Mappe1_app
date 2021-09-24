@@ -61,6 +61,10 @@
     //Dialog language
     <string name="dialogtekst">Er du sikker på at du vil endre språk til tysk?</string>
     <string name="ja">Ja</string>
-    <string name="nei">Avbryt</string>
+    <string name="nei">Nei</string>
+    <string name="backpop">Sikker på at du vil avslutte spillet?</string>
+    <string name="duHar"> </string>
+    <string name="spmIgjen"> spørsmål igjen!</string>
+
 
 </resources>

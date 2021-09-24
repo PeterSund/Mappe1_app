@@ -29,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt1"
+                android:textColor="#000000"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -42,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt2"
+                android:textColor="#000000"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -55,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt3"
+                android:textColor="#000000"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -68,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt4"
+                android:textColor="#000000"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -81,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/statsTableGameTxt5"
+                android:textColor="#000000"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -94,6 +99,7 @@
         android:fontFamily="@font/chewy"
         android:text="@string/statsTableHeaderGame"
         android:textSize="24sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/statsTable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.656"
@@ -123,6 +129,7 @@
         android:fontFamily="@font/chewy"
         android:text="@string/statsHeader"
         android:textSize="34sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/statsInfoTxtScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
@@ -152,6 +159,7 @@
         android:fontFamily="@font/chewy"
         android:text="@string/statsTableHeaderScore"
         android:textSize="24sp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/totalScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"

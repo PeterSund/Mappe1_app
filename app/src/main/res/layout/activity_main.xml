@@ -24,6 +24,7 @@
         android:layout_width="237dp"
         android:layout_height="61dp"
         android:background="@drawable/transparent_button_background"
+        android:backgroundTint="#000000"
         android:fontFamily="@font/coming_soon"
         android:onClick="onClick"
         android:textSize="24sp"
@@ -48,6 +49,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.00999999" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="237dp"
+        android:layout_height="58dp"
+        android:background="#ABB2D3"
+        app:layout_constraintBottom_toTopOf="@+id/btnStats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="240dp"
+        android:layout_height="64dp"
+        android:background="#ABB2D3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.75" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -88,18 +111,6 @@
         app:layout_constraintVertical_bias="0.725"
         app:srcCompat="@drawable/play_button64" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9"
-        app:srcCompat="@drawable/chart" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="170dp"
@@ -115,6 +126,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.73" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@drawable/chart" />
 
     <TextView
         android:id="@+id/textView6"

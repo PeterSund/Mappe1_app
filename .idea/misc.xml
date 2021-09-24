@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.91875" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.91875" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/drawable/transparent_button_background.xml" value="0.91875" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout-land/activity_main.xml" value="0.48375" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout-land/activity_preferences.xml" value="0.9254901960784314" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout-land/activity_stats.xml" value="0.9254901960784314" />
         <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout-land/game_activity.xml" value="0.34010416666666665" />
-        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout/activity_main.xml" value="0.67" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout/activity_preferences.xml" value="0.88" />
+        <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout/activity_stats.xml" value="0.4925" />
         <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/layout/game_activity.xml" value="0.5" />
         <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2625" />
         <entry key="..\:/Apputvikling 2/Mappe1/Mappe1_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2625" />

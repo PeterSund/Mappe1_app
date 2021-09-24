@@ -49,8 +49,9 @@ public class GameActivity extends AppCompatActivity{
         intent.getData();
 
         //Setter antall spørsmål i spillet fra verdi i SharedPref
+        //Default-verdien til spillengde er 5
         preferences = getSharedPreferences("Pref", MODE_PRIVATE);
-        int gameQuestionsArrayLength = preferences.getInt("questionArray_length", 15);
+        int gameQuestionsArrayLength = preferences.getInt("questionArray_length", 5);
 
         //Sett språk fra SharedPreferences
         preferences = getSharedPreferences("Pref", MODE_PRIVATE);
@@ -204,6 +205,29 @@ public class GameActivity extends AppCompatActivity{
                     System.out.println(e);
                 }
                 break;
+
+            case R.id.home:
+                String string = getString(R.string.ja);
+                String string2 = getString(R.string.nei);
+                String string3 = getString(R.string.backpop);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(getString(R.string.dialogtekst_score) + " " + correctAnswersCount() +"/"+ gameQuestions.size());
+                builder.setPositiveButton(string, new DialogInterface.OnClickListener() {
+                    //Metode som håndterer hva som skjer når man trykker på knappen i dialog-boksen
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                });
+                builder.setNegativeButton(string2, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
             default:
                 break;
         }
@@ -226,6 +250,34 @@ public class GameActivity extends AppCompatActivity{
             ret.append(q[i]);
         }
         return ret.toString();
+    }
+
+    //Metode som håndterer hva som skjer hvis man trykker på back-knappen
+    @Override
+    public void onBackPressed() {
+        int antallGjenvarendeSporsmal = gameQuestions.size() - currentIndex;
+        String string = getString(R.string.ja);
+        String string2 = getString(R.string.nei);
+        String string3 = getString(R.string.backpop) +" "+ getString(R.string.duHar) +" "+ antallGjenvarendeSporsmal +" "+ getString(R.string.spmIgjen);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(string3);
+        builder.setPositiveButton(string, new DialogInterface.OnClickListener() {
+            //Metode som håndterer hva som skjer når man trykker på "JA" knappen i dialog-boksen
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+        builder.setNegativeButton(string2, new DialogInterface.OnClickListener() {
+            //Metode som håndterer hva som skjer når man trykker på "NEI" knappen i dialog-boksen
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     //Metode for å håndtere spørsmålene i spillet
