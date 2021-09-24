@@ -1,6 +1,5 @@
-package com.example.mappe1;
+package com.s340363_s344093.mappe1;
 
-import android.app.Application;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;

@@ -1,4 +1,4 @@
-package com.example.mappe1;
+package com.s340363_s344093.mappe1;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 public class StatsActivity extends AppCompatActivity {

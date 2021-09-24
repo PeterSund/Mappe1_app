@@ -1,4 +1,4 @@
-package com.example.mappe1;
+package com.s340363_s344093.mappe1;
 
 import android.content.DialogInterface;
 import android.content.Intent;
